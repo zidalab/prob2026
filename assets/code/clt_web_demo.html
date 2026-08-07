@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>中心极限定理可视化 Demo（骰子求和）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 引入 Chart.js 用于画图 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f7;
+      color: #222;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .panel {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      align-items: center;
+    }
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+    }
+    label {
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+    input[type="number"],
+    input[type="range"] {
+      width: 220px;
+      max-width: 100%;
+    }
+    .range-value {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.15rem;
+    }
+    button {
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: #2563eb;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.1s ease;
+      margin-top: 0.5rem;
+    }
+    button:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+    button:active {
+      transform: translateY(0);
+    }
+    .chart-container {
+      position: relative;
+      height: 430px;
+      margin-top: 1rem;
+    }
+    .tips {
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.6;
+    }
+    .tips ul {
+      padding-left: 1.2rem;
+    }
+    @media (max-width: 640px) {
+      .controls {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>中心极限定理 Demo：骰子求和</h1>
+    <div class="subtitle">
+      每次掷很多个骰子，观察“和”的分布：随着骰子数量增加，直方图逐渐接近一条正态曲线。
+    </div>
+
+    <div class="panel">
+      <div class="controls">
+        <div class="control-group">
+          <label for="numDice">每次掷多少个骰子（n）</label>
+          <input type="range" id="numDice" min="1" max="10000" step="1" value="1" />
+          <div class="range-value"><span id="numDiceValue">1</span> 个骰子</div>
+        </div>
+
+        <div class="control-group">
+          <label for="numTrials">重复实验次数（样本数）</label>
+          <input type="range" id="numTrials" min="500" max="50000" step="500" value="10000" />
+          <div class="range-value"><span id="numTrialsValue">10000</span> 次实验</div>
+        </div>
+
+        <div class="control-group">
+          <label>&nbsp;</label>
+          <button id="runBtn">重新模拟</button>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="histChart"></canvas>
+      </div>
+    </div>
+
+    <div class="panel tips">
+      <strong>如何理解这张图？</strong>
+      <ul>
+        <li>蓝色柱状图：模拟得到的“总和”的经验分布（直方图，纵轴是概率密度）。</li>
+        <li>橙色平滑曲线：用样本均值和方差画出的正态密度曲线。</li>
+        <li>尝试从 n=1 慢慢拖到 n=10000，可以看到直方图越来越像橙色那条正态曲线，这就是中心极限定理的直观表现。</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // 工具函数：生成 [min, max] 区间内的整数随机数
+    function randInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // 模拟：numTrials 次实验，每次掷 numDice 个公平六面骰，返回和的数组
+    function simulateSums(numDice, numTrials) {
+      const sums = new Array(numTrials);
+      for (let i = 0; i < numTrials; i++) {
+        let s = 0;
+        for (let d = 0; d < numDice; d++) {
+          s += randInt(1, 6);
+        }
+        sums[i] = s;
+      }
+      return sums;
+    }
+
+    // 计算均值和标准差
+    function meanAndStd(arr) {
+      const n = arr.length;
+      let sum = 0;
+      for (let i = 0; i < n; i++) sum += arr[i];
+      const mean = sum / n;
+      let sq = 0;
+      for (let i = 0; i < n; i++) sq += (arr[i] - mean) ** 2;
+      const std = Math.sqrt(sq / n);
+      return { mean, std };
+    }
+
+    // 简单做一个直方图：等宽区间
+    function makeHistogram(data, numBins) {
+      let min = Math.min(...data);
+      let max = Math.max(...data);
+
+      // 为了图形美观稍微扩一点范围
+      min -= 0.5;
+      max += 0.5;
+
+      const width = (max - min) / numBins;
+      const counts = new Array(numBins).fill(0);
+
+      for (const x of data) {
+        let idx = Math.floor((x - min) / width);
+        if (idx < 0) idx = 0;
+        if (idx >= numBins) idx = numBins - 1;
+        counts[idx]++;
+      }
+
+      const total = data.length;
+      const xs = [];
+      const densities = [];
+      for (let i = 0; i < numBins; i++) {
+        const binCenter = min + (i + 0.5) * width;
+        xs.push(binCenter);
+        densities.push(counts[i] / (total * width)); // 概率密度估计
+      }
+
+      return { xs, densities };
+    }
+
+    // 生成与直方图 x 位置对应的正态密度值（保证一一对齐）
+    // （恢复原版）生成正态密度曲线数据：在连续区间内取 300 个点
+    function normalPdfData(mean, std, xMin, xMax, numPoints) {
+      const xs = [];
+      const ys = [];
+      const step = (xMax - xMin) / (numPoints - 1);
+      const coeff = 1 / (std * Math.sqrt(2 * Math.PI));
+      for (let i = 0; i < numPoints; i++) {
+        const x = xMin + i * step;
+        const z = (x - mean) / std;
+        ys.push(coeff * Math.exp(-0.5 * z * z));
+        xs.push(x);
+      }
+      return { xs, ys };
+    }
+
+
+
+    const numDiceInput = document.getElementById('numDice');
+    const numTrialsInput = document.getElementById('numTrials');
+    const numDiceValue = document.getElementById('numDiceValue');
+    const numTrialsValue = document.getElementById('numTrialsValue');
+    const runBtn = document.getElementById('runBtn');
+    const ctx = document.getElementById('histChart').getContext('2d');
+
+    let chartInstance = null;
+
+    function updateRangeLabels() {
+      numDiceValue.textContent = numDiceInput.value;
+      numTrialsValue.textContent = numTrialsInput.value;
+    }
+
+    numDiceInput.addEventListener('input', updateRangeLabels);
+    numTrialsInput.addEventListener('input', updateRangeLabels);
+
+    function runSimulation() {
+      const numDice = parseInt(numDiceInput.value, 10);
+      const numTrials = parseInt(numTrialsInput.value, 10);
+
+      // 模拟数据
+      const data = simulateSums(numDice, numTrials);
+      const { mean, std } = meanAndStd(data);
+
+      // 直方图（经验分布）
+      const numBins = Math.min(40, Math.max(10, Math.floor(Math.sqrt(numTrials) / 2)));
+      const hist = makeHistogram(data, numBins);
+
+      // 正态拟合曲线数据（恢复旧版本：使用均匀 300 个点）
+      const xMin = Math.min(...hist.xs);
+      const xMax = Math.max(...hist.xs);
+      const normal = normalPdfData(mean, std, xMin, xMax, 300);
+
+
+      // 构造 Chart.js 数据
+      const chartData = {
+        labels: hist.xs.map(x => x.toFixed(1)),
+        datasets: [
+          {
+            type: 'bar',
+            label: '经验直方图（概率密度）',
+            data: hist.densities,
+            backgroundColor: 'rgba(59, 130, 246, 0.6)',
+            borderColor: 'rgba(37, 99, 235, 1)',
+            borderWidth: 1,
+          },
+          {
+            type: 'line',
+            label: '正态密度拟合',
+            data: normal.ys,
+            borderColor: 'rgba(249, 115, 22, 1)',
+            borderWidth: 2,
+            pointRadius: 0,
+            yAxisID: 'y',
+          },
+        ],
+      };
+
+      const config = {
+        data: chartData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: {
+            mode: 'index',
+            intersect: false,
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: `每次掷 ${numDice} 个骰子，重复 ${numTrials} 次：和的分布`,
+            },
+            tooltip: {
+              callbacks: {
+                // 工具提示里把 x 还原为数值
+                title: (items) => {
+                  if (!items.length) return '';
+                  const idx = items[0].dataIndex;
+                  return `x ≈ ${hist.xs[idx].toFixed(2)}`;
+                },
+              },
+            },
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: '和',
+              },
+              ticks: {
+                maxRotation: 0,
+                autoSkip: true,
+              },
+            },
+            y: {
+              title: {
+                display: true,
+                text: '概率密度',
+              },
+            },
+          },
+        },
+      };
+
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+      chartInstance = new Chart(ctx, config);
+    }
+
+    runBtn.addEventListener('click', runSimulation);
+
+    // 初始化标签 & 初次运行
+    updateRangeLabels();
+    runSimulation();
+  </script>
+</body>
+</html>
