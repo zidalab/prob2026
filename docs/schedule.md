@@ -18,16 +18,16 @@ nav_order: 2
 
 | **日期** | **章节** | **作业（第一章习题）** |
 | :--- | :--- | :--- |
-| 9月2日 | 随机试验、样本空间与事件、概率 <br>[**课件**{: .label .label-blue }](../assets/docs/Chap1-Lecture.pdf) [**课件v2**{: .label .label-blue }](../assets/docs/Chap1-Lecture-v2.pdf) [**要点**{: .label .label-purple }](../assets/docs/Chap1-Note1.pdf) | **HW 1**{: .label .label-green } 2, 3(2) |
-| 9月9日 | 古典概型、条件概率、全概率公式、贝叶斯公式 <br>  [**要点**{: .label .label-purple }](../assets/docs/Chap1-Note2.pdf) | **HW 1**{: .label .label-green } 6, 10, 12, 14(1), 18, 22, 23，26 |
-| 9月16日 | 独立性、小结与复习 <br>  [**要点**{: .label .label-purple }](../assets/docs/Chap1-Note3.pdf) [**练习**{: .label .label-yellow }](../assets/docs/Chap1-Test.pdf) | **HW 1**{: .label .label-green } 29, 38, 40 |
+| 9月2日 | 随机试验、样本空间与事件、概率 <br>[**课件**{: .label .label-blue }](../assets/docs/Chap1-Lecture.pdf) [**课件v2**{: .label .label-blue }](../assets/docs/Chap1-Lecture-v2.pdf) [**要点**{: .label .label-purple }](../assets/docs/Chap1-Note1.pdf) | **HW 0**{: .label .label-green }  熟悉LaTeX和AI工具的使用|
+| 9月9日 | 古典概型、条件概率、全概率公式、贝叶斯公式 <br>  [**要点**{: .label .label-purple }](../assets/docs/Chap1-Note2.pdf) | **HW 1**{: .label .label-green } 2, 3(2), 6, 10, 12, 14(1), 18, 22, 23，26 |
+| 9月16日 | 独立性、小结与复习 <br>  [**要点**{: .label .label-purple }](../assets/docs/Chap1-Note3.pdf) [**练习**{: .label .label-yellow }](../assets/docs/Chap1-Test.pdf) | **HW 1**{: .label .label-green } 29, 38, 40 <br> **HW 0 due**{: .label .label-red }|
 
 ## 第二章 随机变量及其分布
 
 | **日期** | **章节** | **作业（第二章习题）** |
 | :--- | :--- | :--- |
-| 9月23日 | 台风天停课 | - |
-| 9月28日 | 随机变量、分布律 <br>  [**课件**{: .label .label-blue }](../assets/docs/Chap2-Lecture.pdf) [**课件v2**{: .label .label-blue }](../assets/docs/Chap2-Lecture-v2.pdf) [**要点**{: .label .label-purple }](../assets/docs/Chap2-Note1.pdf)| **HW 2**{: .label .label-green } 3, 9 <br>**HW 1 due**{: .label .label-red } |
+| 9月23日 | 随机变量 | - |
+| 9月28日 | 分布律 <br>  [**课件**{: .label .label-blue }](../assets/docs/Chap2-Lecture.pdf) [**课件v2**{: .label .label-blue }](../assets/docs/Chap2-Lecture-v2.pdf) [**要点**{: .label .label-purple }](../assets/docs/Chap2-Note1.pdf)| **HW 2**{: .label .label-green } 3, 9 <br>**HW 1 due**{: .label .label-red } |
 | 9月30日 | 分布函数、连续型随机变量与概率密度 <br>  [**要点**{: .label .label-purple }](../assets/docs/Chap2-Note2.pdf) | **HW 2**{: .label .label-green } 12, 14, 19, 23, 26, 30  |
 | 10月14日 | 随机变量的函数分布，小结 <br>  [**要点**{: .label .label-purple }](../assets/docs/Chap2-Note3.pdf) [**练习**{: .label .label-yellow }](../assets/docs/Chap2-Test.pdf) | **HW 2**{: .label .label-green } 34, 37  |
 
@@ -50,30 +50,30 @@ nav_order: 2
 
 | **日期** | **章节** | **作业（第五章习题）** |
 | :--- | :--- | :--- |
-| 11月25日 | 大数定律与中心极限定理 <br>  [**课件**{: .label .label-blue }](../assets/docs/Chap5-Lecture.pdf) [**要点**{: .label .label-purple }](../assets/docs/Chap5-Note1.pdf)  [**中心极限定理Demo**{: .label .label-green }](../assets/code/clt_web_demo.html) | **HW 5**{: .label .label-green } 无作业 <br>**HW 4 due**{: .label .label-red } |
+| 11月25日 | 大数定律与中心极限定理 <br>  [**课件**{: .label .label-blue }](../assets/docs/Chap5-Lecture.pdf) [**要点**{: .label .label-purple }](../assets/docs/Chap5-Note1.pdf)  [**中心极限定理Demo**{: .label .label-green }](../assets/code/clt_web_demo.html) | **HW**{: .label .label-green } 无作业 <br>**HW 4 due**{: .label .label-red } |
 
 ## 第六章 样本及抽样分布
 
 | **日期** | **章节** | **作业（第六章习题）** |
 | :--- | :--- | :--- |
 | 12月2日 | 运动会停课 | - |
-| 12月9日 | 随机样本、抽样分布、直方图、箱线图 <br>  [**课件**{: .label .label-blue }](../assets/docs/Chap6-Lecture.pdf) [**课件v2**{: .label .label-blue }](../assets/docs/Chap6-Lecture_v2.pdf) [**要点**{: .label .label-purple }](../assets/docs/Chap6-Note1.pdf) [**练习**{: .label .label-yellow }](../assets/docs/Chap6-Test.pdf)[**练习答案**{: .label .label-yellow }](../assets/docs/Chap6-Test-With-Answer.pdf)| **HW 6**{: .label .label-green } 1, 3, 8, 10 |
+| 12月9日 | 随机样本、抽样分布、直方图、箱线图 <br>  [**课件**{: .label .label-blue }](../assets/docs/Chap6-Lecture.pdf) [**课件v2**{: .label .label-blue }](../assets/docs/Chap6-Lecture_v2.pdf) [**要点**{: .label .label-purple }](../assets/docs/Chap6-Note1.pdf) [**练习**{: .label .label-yellow }](../assets/docs/Chap6-Test.pdf)[**练习答案**{: .label .label-yellow }](../assets/docs/Chap6-Test-With-Answer.pdf)| **HW 5**{: .label .label-green } 1, 3, 8, 10 |
 
 ## 第七章 参数估计
 
 | **日期** | **章节** | **作业（第七章习题）** |
 | :--- | :--- | :--- |
-| 12月16日 | 点估计、最大似然估计 <br>  [**课件**{: .label .label-blue }](../assets/docs/Chap7-Lecture.pdf) [**课件v2**{: .label .label-blue }](../assets/docs/Chap7-Lecture_V2.pdf) [**要点**{: .label .label-purple }](../assets/docs/Chap7-Note1.pdf)| **HW 7**{: .label .label-green } 2(2,3), 3, 10, 11 <br>**HW 6 due**{: .label .label-red } |
-| 12月23日 | 估计量的评选标准 <br>  [**要点**{: .label .label-purple }](../assets/docs/Chap7-Note2.pdf) [**练习**{: .label .label-yellow }](../assets/docs/Chap7-Test.pdf)[**练习答案**{: .label .label-yellow }](../assets/docs/Chap7-Test-With-Answer.pdf)| **HW 7**{: .label .label-green } 2(2,3), 3, 10, 11  |
+| 12月16日 | 点估计、最大似然估计 <br>  [**课件**{: .label .label-blue }](../assets/docs/Chap7-Lecture.pdf) [**课件v2**{: .label .label-blue }](../assets/docs/Chap7-Lecture_V2.pdf) [**要点**{: .label .label-purple }](../assets/docs/Chap7-Note1.pdf)| **HW 6**{: .label .label-green } 2(2,3), 3, 10, 11 <br>**HW 5 due**{: .label .label-red } |
+| 12月23日 | 估计量的评选标准 <br>  [**要点**{: .label .label-purple }](../assets/docs/Chap7-Note2.pdf) [**练习**{: .label .label-yellow }](../assets/docs/Chap7-Test.pdf)[**练习答案**{: .label .label-yellow }](../assets/docs/Chap7-Test-With-Answer.pdf)| **HW 6**{: .label .label-green } 2(2,3), 3, 10, 11  |
 
 ## 复习与总结
 
 | **日期** | **章节** | **作业（无新作业）** |
 | :--- | :--- | :--- |
-| 12月30日 | 总结与复习 <br>  [**课件**{: .label .label-blue }](../assets/docs/Review.pdf) | **HW 7 due**{: .label .label-red } |
+| 12月30日 | 总结与复习 <br>  [**课件**{: .label .label-blue }](../assets/docs/Review.pdf) | **HW 6 due**{: .label .label-red } |
 
 ## 期末考试
 
 | **日期** | **内容** | **备注** |
 | :--- | :--- | :--- |
-| 1月6日 | [**试题类型**{: .label .label-blue }](../assets/docs/Final_sample.pdf) | **19:00-21:00，四方楼西410** |
+| 1月6日 | [**试题类型**{: .label .label-blue }](../assets/docs/Final_sample.pdf) | **时间地点待定** |
