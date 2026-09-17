@@ -26,8 +26,8 @@ nav_order: 2
 
 | **日期** | **章节** | **作业（第二章习题）** |
 | :--- | :--- | :--- |
-| 9月23日 | 随机变量、分布律 <br>  [**课件**{: .label .label-blue }](../assets/docs/Chap2-Lecture-v2.pdf) [**要点**{: .label .label-purple }](../assets/docs/Chap2-Note1.pdf)| **HW 2**{: .label .label-green } 3, 9 <br>**HW 1 due**{: .label .label-red } [**LaTeX模板**{: .label .label-template }](../assets/docs/assignment-1-template.tex) |
-| 9月30日 | 分布函数、连续型随机变量 <br>  [**要点**{: .label .label-purple }](../assets/docs/Chap2-Note2.pdf) | **HW 2**{: .label .label-green } 12, 14, 19, 23, 26, 30  |
+| 9月23日 | 随机变量、分布律 <br>  [**课件**{: .label .label-blue }](../assets/docs/Chap2-Lecture-v2.pdf) [**要点**{: .label .label-purple }](../assets/docs/Chap2-Note1.pdf)| **HW 2**{: .label .label-green } 3, 9 |
+| 9月30日 | 分布函数、连续型随机变量 <br>  [**要点**{: .label .label-purple }](../assets/docs/Chap2-Note2.pdf) | **HW 2**{: .label .label-green } 12, 14, 19, 23, 26, 30 <br>**HW 1 due**{: .label .label-red } [**LaTeX模板**{: .label .label-template }](../assets/docs/assignment-1-template.tex) |
 | 10月10日 | 概率密度 <br>  |   |
 | 10月14日 | 随机变量的函数分布，小结 <br>  [**要点**{: .label .label-purple }](../assets/docs/Chap2-Note3.pdf) [**练习**{: .label .label-yellow }](../assets/docs/Chap2-Test.pdf) | **HW 2**{: .label .label-green } 34, 37  |
 
