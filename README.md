@@ -48,9 +48,28 @@
 
 3.  **启动服务**:
     ```bash
-    bundle exec jekyll serve
+    bundle exec jekyll serve --config _config.yml,_config.local.yml
     ```
     网站将在 `http://localhost:4000` 上运行。
+
+    Windows 下也可以双击 `run.bat`。
+
+## GitHub Pages 部署
+
+网站使用 `Gemfile.lock` 中固定版本的 `just-the-docs` 主题；本地与 GitHub Actions 都使用 `theme: just-the-docs`，无需 `remote_theme`。
+
+1. 在 GitHub 仓库的 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**。
+2. 提交并推送本次配置、工作流和脚本改动，包括删除 `.github/workflows/jekyll2.yml`。保留唯一的部署工作流 `.github/workflows/jekyll.yml`。
+3. 每次更新 `main` 后，该工作流会构建网站，检查侧边栏、CSS、表格样式和七章 HTML 课件链接，再部署到 `https://zidalab.github.io/prob2026/`。
+
+`_config.yml` 是 GitHub Pages 的正式配置，`_config.local.yml` 只覆盖本地地址。`_config.github-pages.yml` 保留为旧配置备份，部署时不使用；不要再用它替换 `_config.yml`。
+
+推送前可以检查正式构建：
+
+```bash
+bundle exec jekyll build --config _config.yml
+bundle exec ruby scripts/verify_site.rb _site /prob2026
+```
 
 ## 贡献
 

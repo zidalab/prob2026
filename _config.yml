@@ -1,24 +1,23 @@
 title: 概率论与数理统计 2026
 description: 2026 课程网站
-remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs
 
 url: https://zidalab.github.io
 baseurl: /prob2026
+
+exclude:
+  - scripts/
+  - README.md
+  - run.bat
 
 aux_links:
   作业提交: http://172.21.19.12:3000/
   ZidaLab: https://zidalab.github.io
 
 nav:
-  - title: Home
+  - title: 课程介绍
     url: /
-  - title: 开会
-    url: /docs/meeting
-  - title: 实验
-    url: /docs/experiment
-  - title: 写作与画图
-    url: /docs/writing
-  - title: 培训
-    url: /docs/training
-  - title: 其他
-    url: /docs/misc
+  - title: 课程进度
+    url: /docs/schedule
+  - title: 教学团队
+    url: /docs/instructors
