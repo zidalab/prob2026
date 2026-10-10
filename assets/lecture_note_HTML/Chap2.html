@@ -1266,16 +1266,16 @@ $$</p>
 <div class="chapter-label">概率论与数理统计 · 第2章 · 随机变量及其分布</div>
 <h2>三枚硬币：尾部与区间概率</h2>
 <div class="slide-content "><p>$$
-\begin{gathered}P\{X\ge 5.5\} \\
-=1-P\{X &lt; 5.5\} \\
-=1-P\{X\le 5.5\}+P\{X=5.5\} \\
-=1-1+0 \\
-=0. \\
-P\{1 &lt; X\le 3\} \\
-=P\{X\le 3\}-P\{X\le 1\} \\
-=F(3)-F(1) \\
-=1-\frac{4}{8} \\
-=\frac{1}{2}.\end{gathered}
+\begin{aligned}
+P\{X\ge 5.5\} &amp;= 1-P\{X &lt; 5.5\} \\
+              &amp;= 1-P\{X\le 5.5\}+P\{X=5.5\} \\
+              &amp;= 1-1+0 \\
+              &amp;= 0. \\[1em]
+P\{1 &lt; X\le 3\} &amp;= P\{X\le 3\}-P\{X\le 1\} \\
+                &amp;= F(3)-F(1) \\
+                &amp;= 1-\frac{4}{8} \\
+                &amp;= \frac{1}{2}.
+\end{aligned}
 $$</p>
 <aside class="notes"><p>来源：第二章原课件第 80 页。</p>
 </aside></div>
@@ -1300,11 +1300,23 @@ $$</p>
 <section class="slide" id="ch02-p082" data-type="normal" data-chapter="2" data-source="content/chap02/03-cdf.md">
 <div class="chapter-label">概率论与数理统计 · 第2章 · 随机变量及其分布</div>
 <h2>由分布律求分布函数</h2>
-<div class="slide-content "><p>$$
-\text{得} F(x)=\left\{ \begin{gathered}0, x &lt; -1,\\P\{X=-1\}, -1\le x &lt; 2,\\P\{X=-1\}+P\{X=2\}, 2\le x &lt; 3,\\1, x\ge 3.\end{gathered}\right.
+<div class="slide-content "><p>得
+$$
+F(x)= \begin{cases} 
+0, &amp; x &lt; -1, \\
+P\{X=-1\}, &amp; -1 \le x &lt; 2, \\
+P\{X=-1\}+P\{X=2\}, &amp; 2 \le x &lt; 3, \\
+1, &amp; x \ge 3.
+\end{cases}
 $$</p>
-<div class="fragment"><p>$$
-\text{即} F(x)=\left\{ \begin{gathered}0, x &lt; 1,\\\frac{1}{4}, -1\le x &lt; 2,\\\frac{3}{4}, 2\le x &lt; 3,\\1, x\ge 3.\end{gathered}\right.
+<div class="fragment"><p>即
+$$
+F(x)= \begin{cases} 
+0, &amp; x &lt; -1, \\
+\frac{1}{4}, &amp; -1 \le x &lt; 2, \\
+\frac{3}{4}, &amp; 2 \le x &lt; 3, \\
+1, &amp; x \ge 3.
+\end{cases}
 $$</p>
 </div><aside class="notes"><p>来源：第二章原课件第 82 页。</p>
 </aside></div>
@@ -1543,10 +1555,9 @@ $$</p>
 <div class="fragment"><p>解之得 $k=\frac{1}{6}.$</p>
 </div><div class="fragment"><p>$(2) $ 由 $k=\frac{1}{6} $ 知 $X $ 的概率密度为</p>
 <p>$$
-f(x)=\left\{ \begin{gathered}\frac{x}{6}, 0\le x &lt; 3,\\
-2-\frac{x}{2}, 3\le x\le 4,\\
-\begin{array}{c}\\
-0, \text{其它}.\end{array}\end{gathered}\right.
+f(x)=\begin{cases}\frac{x}{6}, &amp;0\le x &lt; 3,\\
+2-\frac{x}{2}, &amp;3\le x\le 4,\\
+0, &amp;\text{其它}. \end{cases}
 $$</p>
 </div><aside class="notes"><p>来源：第二章原课件第 97 页。</p>
 </aside></div>
@@ -1557,7 +1568,10 @@ $$</p>
 <h2>分段密度：求分布函数</h2>
 <div class="slide-content "><p>由 $F(x)=\int_{-\infty }^{x} f(x)\mathrm{d}x $ 得</p>
 <p>$$
-F(x)=\left\{ \begin{gathered}0, x &lt; 0,\\\int_{0}^{x} \frac{x}{6}\mathrm{d}x, 0\le x &lt; 3,\\\int_{0}^{3} \frac{x}{6}\mathrm{d}x+\int_{3}^{x} (2-\frac{x}{2})\mathrm{d}x, 3\le x &lt; 4,\\1, x\ge 4.\end{gathered}\right.
+F(x)=\begin{cases}0, &amp;x &lt; 0,\\
+\int_{0}^{x} \frac{x}{6}\mathrm{d}x, &amp;0\le x &lt; 3,\\
+\int_{0}^{3} \frac{x}{6}\mathrm{d}x+\int_{3}^{x} (2-\frac{x}{2})\mathrm{d}x, &amp;3\le x &lt; 4,\\
+1, &amp;x\ge 4.\end{cases}
 $$</p>
 <aside class="notes"><p>来源：第二章原课件第 98 页。</p>
 </aside></div>
@@ -1566,8 +1580,12 @@ $$</p>
 <section class="slide" id="ch02-p099" data-type="normal" data-chapter="2" data-source="content/chap02/04-continuous.md">
 <div class="chapter-label">概率论与数理统计 · 第2章 · 随机变量及其分布</div>
 <h2>分段密度：计算区间概率</h2>
-<div class="slide-content "><p>$$
-\text{即} F(x)=\left\{ \begin{gathered}0, x &lt; 0,\\\frac{x^{2}}{12}, 0\le x &lt; 3,\\-3+2x-\frac{x^{2}}{4}, 3\le x &lt; 4,\\1, x\ge 4.\end{gathered}\right.
+<div class="slide-content "><p>即
+$$
+F(x)=\begin{cases}0, &amp;x &lt; 0,\\
+\frac{x^{2}}{12}, &amp;0\le x &lt; 3,\\
+-3+2x-\frac{x^{2}}{4}, &amp;3\le x &lt; 4,\\
+1, &amp;x\ge 4.\end{cases}
 $$</p>
 <div class="fragment"><p>$$
 (3) P\{1 &lt; X\le \frac{7}{2}\}
@@ -1640,7 +1658,10 @@ $$</p>
 </div><div class="fragment"><p><strong>解</strong>
 X 的分布密度函数为</p>
 <p>$$
-f(x)=\left\{ \begin{gathered}\frac{1}{3}, 2\le x\le 5,\\0, \text{其他}.\end{gathered}\right.
+f(x) = \begin{cases} 
+\frac{1}{3}, &amp; 2 \le x \le 5, \\ 
+0, &amp; \text{其他}.
+\end{cases}
 $$</p>
 </div><div class="fragment"><p>设 $A$ 表示“对 $X$ 的观测值大于 $3$ ”,</p>
 </div><div class="fragment"><p>即 $A = \{ X &gt; 3 \}$.</p>
@@ -1693,12 +1714,13 @@ $$</p>
 <section class="slide" id="ch02-p108" data-type="normal" data-chapter="2" data-source="content/chap02/04-continuous.md">
 <div class="chapter-label">概率论与数理统计 · 第2章 · 随机变量及其分布</div>
 <h2>指数分布：灯管寿命</h2>
-<div class="slide-content "><div class="component component-example example"><div class="component-label label">例题</div><p>设某类日光灯管的使用寿命 $X$ 服从参数为 $\theta = 2000$ 的指数分布(单位:小时)。
-(1)任取一只这种灯管, 求能正常使用 $1000$ 小时以上的概率.
-(2) 有一只这种灯管已经正常使用了 $1000$ 小时以上,求还能使用 $1000$ 小时以上的概率.</p>
+<div class="slide-content "><div class="component component-example example"><div class="component-label label">例题</div><p>设某类日光灯管的使用寿命 $X$ 服从参数为 $\theta = 2000$ 的指数分布(单位:小时)。</p>
+<p>(1)任取一只这种灯管, 求能正常使用 $1000$ 小时以上的概率.</p>
+<p>(2) 有一只这种灯管已经正常使用了 $1000$ 小时以上,求还能使用 $1000$ 小时以上的概率.</p>
 </div><div class="fragment"><p><strong>解</strong> $X$ 的分布函数为</p>
 <p>$$
-F(x)=\left\{ \begin{gathered}1-\text{e}^{- \frac{1}{2000}x}, x\ge 0,\\0, x &lt; 0.\end{gathered}\right.
+F(x)=\begin{cases}1-\text{e}^{- \frac{1}{2000}x}, &amp;x\ge 0,\\
+0, &amp;x &lt; 0.\end{cases}
 $$</p>
 </div><aside class="notes"><p>来源：第二章原课件第 108 页。</p>
 </aside></div>
@@ -1964,7 +1986,7 @@ $$</p>
 <section class="slide" id="ch02-p127" data-type="normal" data-chapter="2" data-source="content/chap02/04-continuous.md">
 <div class="chapter-label">概率论与数理统计 · 第2章 · 随机变量及其分布</div>
 <h2>温度调节：问题与计算</h2>
-<div class="slide-content "><div class="columns"><div class="column"><div class="component component-example example"><div class="component-label label">例</div><p>将一温度调节器放置在贮存着某种液体的容器内。调节器整定在 $d ^\circ\mathrm{C}$ 液体的温度 $X$  是一个随机变量，且 $X\sim N(d, 0.5^{2})$。</p>
+<div class="slide-content "><div class="columns"><div class="column"><div class="component component-example example"><div class="component-label label">例</div><p>将一温度调节器放置在贮存着某种液体的容器内。调节器整定在 $d ^\circ\mathrm{C}$，液体的温度 $X$  是一个随机变量，且 $X\sim N(d, 0.5^{2})$。</p>
 <p>(1) 若 $d=90$， 求 $X$ 小于 $89$ 的概率。</p>
 <p>(2) 若要求保持液体的温度至少为 $80 ^\circ\mathrm{C}$ 的概率不低于 $0.99$， 问 $d$ 至少为多少？</p>
 </div></div><div class="column"><div class="fragment"><p><strong>解</strong>
@@ -2013,7 +2035,7 @@ $$</p>
 <section class="slide" id="ch02-p130" data-type="normal" data-chapter="2" data-source="content/chap02/04-continuous.md">
 <div class="chapter-label">概率论与数理统计 · 第2章 · 随机变量及其分布</div>
 <h2>正态分布：重要性</h2>
-<div class="slide-content "><p>正态分布有极其广泛的实际背景, 例如测量误差, 人的生理特征尺寸如身高、体重等，正常情况下生产的产品尺寸:直径、长度、重量高度，炮弹的弹落点的分布等, 都服从或近似服从正态分布。可以说,正态分布是自然界和社会现象中最为常见的一种分布, 一个变量如果受到大量微小的、独立的随机因素的影响, 那么这个变量一般   是一个正态随机变量.</p>
+<div class="slide-content "><p>正态分布是自然界和社会现象中最为常见的一种分布, 一个变量如果受到大量微小的、独立的随机因素的影响, 那么这个变量一般是一个正态随机变量.</p>
 <aside class="notes"><p>来源：第二章原课件第 130 页。</p>
 </aside></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span></span></footer>
@@ -2219,12 +2241,12 @@ $$</p>
 <div class="slide-content "><p>$$
 =\int_{-\infty }^{\sqrt{y}} f_{X}(x)\mathrm{d}x-\int_{-\infty }^{-\sqrt{y}} f_{X}(x)\mathrm{d}x.
 $$</p>
-<div class="fragment"><p>再由分布函数求概率密度.</p>
-<p>$$
-=f_{X}(\sqrt{y})(\sqrt{y})^{\prime }-f_{X}(-\sqrt{y})(-\sqrt{y})^{\prime }
+<div class="fragment"><p>再由分布函数求概率密度.
+$$
+f_{Y}(y)=F&#39;_{Y}(y)
 $$</p>
 </div><div class="fragment"><p>$$
-f_{Y}(y)=F&#39;_{Y}(y)
+=f_{X}(\sqrt{y})(\sqrt{y})^{\prime }-f_{X}(-\sqrt{y})(-\sqrt{y})^{\prime }
 $$</p>
 </div><div class="fragment"><p>$$
 =\frac{1}{2\sqrt{y}}\cdot (\sqrt{y})^{3}\cdot \text{e}^{-(\sqrt{y})^{2}}+0\cdot \frac{1}{2\sqrt{y}}
@@ -2270,7 +2292,7 @@ $$</p>
 <section class="slide" id="ch02-p145" data-type="normal" data-chapter="2" data-source="content/chap02/05-function.md">
 <div class="chapter-label">概率论与数理统计 · 第2章 · 随机变量及其分布</div>
 <h2>单调函数变换定理</h2>
-<div class="slide-content "><div class="component component-theorem theorem"><div class="component-label label">定理</div><p>设 $X$ 具有概率密度 $f_X(x)$，$-\infty&lt;x&lt;+\infty$。函数 $g(x)$ 处处可导，且恒有 $g^{\prime}(x)&gt;0$（或恒有 $g^{\prime}(x)&lt;0$）。则 $Y=g(Y)$ 是连续型随机变量，其概率密度为</p>
+<div class="slide-content "><div class="component component-theorem theorem"><div class="component-label label">定理</div><p>设 $X$ 具有概率密度 $f_X(x)$，$-\infty&lt;x&lt;+\infty$。函数 $g(x)$ 处处可导，且恒有 $g^{\prime}(x)&gt;0$（或恒有 $g^{\prime}(x)&lt;0$）。则 $Y=g(X)$ 是连续型随机变量，其概率密度为</p>
 <p>$$
 f_Y(y)=\begin{cases}f_X[h(y)]|h^{\prime}(y)|,&amp;\alpha&lt;y&lt;\beta,\\
 0,&amp;\text{其他}.\end{cases}
