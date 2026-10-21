@@ -89,17 +89,45 @@ body { background:#fff; }
 .reveal .position-content > :last-child { margin-bottom:0; }
 
 /* Migrated chapters: readable lecture layout. Reveal alone scales the 16:9 viewport. */
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .slide-content { font-size:28px; line-height:1.45; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) p { line-height:1.45; margin:0 0 12px; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) li { line-height:1.45; margin:0 0 12px; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) h3 { font-size:30px; margin:0 0 16px; color:var(--teal); }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .katex { font-size:1em; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .katex-display { margin:14px 0; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .katex-display > .katex { white-space:normal; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .columns { gap:40px; align-items:start; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .column { padding:0; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) img { display:block; margin:12px auto; max-height:320px; object-fit:contain; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .slide-content { font-size:28px; line-height:1.45; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) p { line-height:1.45; margin:0 0 12px; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) li { line-height:1.45; margin:0 0 12px; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) h3 { font-size:30px; margin:0 0 16px; color:var(--teal); }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .katex { font-size:1em; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .katex-display { margin:14px 0; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .katex-display > .katex { white-space:normal; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .columns { gap:40px; align-items:start; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .column { padding:0; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) img { display:block; margin:12px auto; max-height:320px; object-fit:contain; }
 .reveal .course-plot { display:block; width:100%; max-height:400px; margin:8px auto; }
+/* Compact offline explorer; all styles stay inside the CDF widget. */
+.reveal .cdf-region { font-size:16px; line-height:1.35; border:1px solid #c8deda; border-radius:5px; padding:12px 12px 8px; background:#fff; }
+.reveal .cdf-region-heading { display:flex; align-items:center; justify-content:space-between; gap:8px; color:var(--teal); font-weight:600; margin-bottom:4px; }
+.reveal .cdf-region button { font:inherit; font-size:13px; line-height:1.4; color:var(--ink); border:1px solid #c8deda; background:#fff; border-radius:3px; padding:4px 6px; cursor:pointer; white-space:nowrap; }
+.reveal .cdf-region button:hover { background:var(--pale); border-color:var(--teal); }
+.reveal .cdf-region button:focus-visible,.reveal .cdf-region-chart:focus-visible { outline:2px solid var(--teal); outline-offset:2px; }
+.reveal .cdf-region-presets button[aria-pressed="true"] { background:var(--teal); border-color:var(--teal); color:#fff; }
+.reveal .cdf-region-chart { display:block; width:100%; height:auto; max-height:none; touch-action:none; cursor:crosshair; }
+.reveal .cdf-region-chart text { font-family:LectureSans,Georgia,serif; font-size:18px; fill:var(--ink); }
+.reveal .cdf-region-areas [data-region] { stroke:transparent; stroke-width:2.5; }
+.reveal .cdf-region-areas [data-region="outside"] { fill:#f1f4f5; }
+.reveal .cdf-region-areas [data-region="center"] { fill:#edf2f1; }
+.reveal .cdf-region-areas [data-region="upper"],.reveal .cdf-region-areas [data-region="right"] { fill:#dfefec; }
+.reveal .cdf-region-areas [data-region="both"] { fill:#bbdbd4; }
+.reveal .cdf-region-areas [data-region].is-active { stroke:var(--teal); fill:#c8e6df; }
+.reveal .cdf-region-boundaries { fill:none; stroke:#8eb8b1; stroke-width:1.3; stroke-dasharray:4 4; }
+.reveal .cdf-region-axes { fill:none; stroke:var(--muted); stroke-width:1.5; }
+.reveal .cdf-region-ticks path { stroke:var(--muted); stroke-width:1.2; }
+.reveal .cdf-region-label { text-anchor:middle; font-size:18px; }
+.reveal .cdf-region-probability { fill:#b45632; stroke:white; stroke-width:1.5; }
+.reveal .cdf-region-probe path { fill:none; stroke:#b45632; stroke-width:1.5; stroke-dasharray:4 3; }
+.reveal .cdf-region-probe circle { fill:#fff; stroke:#b45632; stroke-width:2.5; }
+.reveal .cdf-region-readout { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 10px; background:var(--pale); border-left:3px solid var(--teal); font-variant-numeric:tabular-nums; margin:3px 0 8px; }
+.reveal .cdf-region-readout strong { color:var(--teal); font-size:19px; }
+.reveal .cdf-region-presets { display:flex; flex-wrap:wrap; align-items:center; gap:4px; margin:5px 0; font-size:13px; }
+.reveal .cdf-region-presets > span:first-child { margin-right:3px; color:var(--muted); }
+.reveal .cdf-region-point-key { color:#a44f30; font-size:12px; margin-left:auto; }
+.reveal .cdf-region-help { margin-top:7px; color:var(--muted); font-size:12px; }
 .reveal .plot-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px 24px; }
 .reveal .plot-grid .course-plot { max-height:210px; }
 .reveal .plot-grid.three { grid-template-columns:1fr; gap:8px; }
@@ -107,19 +135,19 @@ body { background:#fff; }
 .reveal .plot-grid .course-plot text { font-size:32px; }
 
 /* Migrated chapters: emphasis and explicit teaching steps; Chapter 3 retains its theme. */
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) strong { font-weight:700; color:var(--teal); }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .component { border-radius:4px; margin:12px 0; padding:12px 20px; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .component-example { border:1px solid #cddfdc; border-left:4px solid var(--teal); background:#f0f7f6; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .component-label { font-size:21px; font-weight:700; margin-bottom:8px; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .fragment { margin-bottom:0; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .component > .fragment:last-child > :last-child { margin-bottom:0; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .column > .component:first-child { margin-top:0; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"]) .component strong { color:inherit; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"])[data-type="section"] .card { max-width:850px; padding:12px 20px; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) strong { font-weight:700; color:var(--teal); }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .component { border-radius:4px; margin:12px 0; padding:12px 20px; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .component-example { border:1px solid #cddfdc; border-left:4px solid var(--teal); background:#f0f7f6; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .component-label { font-size:21px; font-weight:700; margin-bottom:8px; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .fragment { margin-bottom:0; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .component > .fragment:last-child > :last-child { margin-bottom:0; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .column > .component:first-child { margin-top:0; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"]) .component strong { color:inherit; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"])[data-type="section"] .card { max-width:850px; padding:12px 20px; }
 
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"])[data-type="section"] .card { display:flex; align-items:center; gap:24px; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"])[data-type="section"] .card .label { margin:0; min-width:32px; }
-.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"])[data-type="section"] .card p { margin:0; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"])[data-type="section"] .card { display:flex; align-items:center; gap:24px; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"])[data-type="section"] .card .label { margin:0; min-width:32px; }
+.reveal .slide:is([data-chapter="1"],[data-chapter="2"],[data-chapter="4"],[data-chapter="5"],[data-chapter="6"],[data-chapter="7"],[data-kind="standalone"])[data-type="section"] .card p { margin:0; }
 .reveal .slide#ch02-p091 img { max-height:210px; }
 
 
@@ -136,1162 +164,1143 @@ body { background:#fff; }
 /* Chapter 6: native statistical plots and source portraits. */
 .reveal .slide[data-chapter="6"] .course-plot { max-height:300px; }
 .reveal .slide[data-chapter="6"] img { max-height:260px; }
+
+/* A single chart spans the full standalone column, including the Poisson wrapper. */
+.reveal .slide[data-kind="standalone"] .plot-grid > .course-plot:only-child { grid-column:1 / -1; max-height:400px; }
+.reveal .slide[data-kind="standalone"] .plot-grid > .course-plot:only-child text { font-size:36px; }
 </style>
 </head>
 <body>
-<div class="reveal"><div class="slides"><section class="slide" id="ch3-001" data-type="title" data-chapter="3" data-source="content/chap03/00-introduction.md">
+<div class="reveal"><div class="slides"><section class="slide" id="ch3-001" data-type="title" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/00-introduction.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>多维随机变量及其分布</h2>
-<div class="slide-content "><p class="cover-sub">概率论与数理统计 · 第三章</p><p class="cover-desc">从一个随机变量，走向多个随机变量之间的关系。</p>
-<div class="fragment"><div class="cover-topics"><span>联合分布</span><span>边缘分布</span><span>条件分布</span><span>相互独立性</span></div></div></div>
+<div class="slide-content "><p class="cover-sub">概率论与数理统计 · 第三章</p><p class="cover-desc">从一个随机变量，走向多个随机变量之间的关系。</p><div class="fragment"><div class="cover-topics"><span>联合分布</span><span>边缘分布</span><span>条件分布</span><span>相互独立性</span></div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 1 页</span></footer>
 </section>
-<section class="slide" id="ch3-002" data-type="normal" data-chapter="3" data-source="content/chap03/00-introduction.md">
+<section class="slide" id="ch3-002" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/00-introduction.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>为什么研究多维随机变量？</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">实例 1 · 弹着点</div><p>炮弹弹着点的位置 $(X,Y)$ 就是一个二维随机变量。</p>
-![point 示意图](images/point.svg)</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">实例 2 · 身高与体重</div><p>考查某一地区学前儿童的发育情况，身高 $H$ 和体重 $W$ 构成二维随机变量 $(H,W)$。</p></div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>二维随机变量 $(X,Y)$ 的性质不仅与 $X$、$Y$ 有关，还依赖于这两个随机变量的相互关系。</p>
+<p><svg role="img" aria-label="point 示意图" xmlns="http://www.w3.org/2000/svg" class="diagram" data-name="point" viewBox="0 0 340 160"><path d="M55 125H290M75 145V15" stroke="#1c3a47" stroke-width="2.5" fill="none"/><circle cx="210" cy="55" r="8" fill="#007a78"/><path d="M75 55H210V125" stroke="#90b8b3" stroke-dasharray="5 5" fill="none"/><text x="225" y="50">(X, Y)</text><text x="287" y="145">X</text><text x="52" y="20">Y</text></svg></p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">实例 2 · 身高与体重</div><p>考查某一地区学前儿童的发育情况，身高 $H$ 和体重 $W$ 构成二维随机变量 $(H,W)$。</p></div></div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>二维随机变量 $(X,Y)$ 的性质不仅与 $X$、$Y$ 有关，还依赖于这两个随机变量的相互关系。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 2、5 页</span></footer>
 </section>
-<section class="slide" id="ch3-003" data-type="section" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-003" data-type="section" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>二维随机变量</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">01</div><p>二维随机变量及其分布函数</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">02</div><p>二维离散型随机变量</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">03</div><p>二维连续型随机变量</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">02</div><p>二维离散型随机变量</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">03</div><p>二维连续型随机变量</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 3 页</span></footer>
 </section>
-<section class="slide" id="ch3-004" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-004" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>二维随机变量的定义</h2>
 <div class="slide-content "><p>设 $E$ 是一个随机试验，样本空间为 $S=\{e\}$。$X=X(e)$ 和 $Y=Y(e)$ 是定义在 $S$ 上的随机变量。</p>
-
 <div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>由它们构成的向量 $(X,Y)$ 称为<strong>二维随机向量</strong>或<strong>二维随机变量</strong>。</p>
-</div></div>
-<div class="fragment"><p><svg role="img" aria-label="mapping 示意图" xmlns="http://www.w3.org/2000/svg" class="diagram" data-name="mapping" viewBox="0 0 520 240"><rect x="32" y="45" width="130" height="120" rx="28" fill="#edf7f6" stroke="#007a78" stroke-width="2"/><text x="48" y="78">S</text><circle cx="112" cy="107" r="5" fill="#1c3a47"/><text x="88" y="132">e</text><path d="M125 103L310 55M125 112L310 163" stroke="#1c3a47" stroke-width="2.5" fill="none"/><rect x="310" y="25" width="150" height="60" rx="22" fill="#f5f8f9" stroke="#7b9fa9"/><rect x="310" y="140" width="150" height="60" rx="22" fill="#f5f8f9" stroke="#7b9fa9"/><text x="350" y="64">X(e)</text><text x="350" y="179">Y(e)</text></svg></p>
+</div></div><div class="fragment"><p><svg role="img" aria-label="mapping 示意图" xmlns="http://www.w3.org/2000/svg" class="diagram" data-name="mapping" viewBox="0 0 520 240"><rect x="32" y="45" width="130" height="120" rx="28" fill="#edf7f6" stroke="#007a78" stroke-width="2"/><text x="48" y="78">S</text><circle cx="112" cy="107" r="5" fill="#1c3a47"/><text x="88" y="132">e</text><path d="M125 103L310 55M125 112L310 163" stroke="#1c3a47" stroke-width="2.5" fill="none"/><rect x="310" y="25" width="150" height="60" rx="22" fill="#f5f8f9" stroke="#7b9fa9"/><rect x="310" y="140" width="150" height="60" rx="22" fill="#f5f8f9" stroke="#7b9fa9"/><text x="350" y="64">X(e)</text><text x="350" y="179">Y(e)</text></svg></p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 4 页</span></footer>
 </section>
-<section class="slide" id="ch3-005" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-005" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>联合分布函数</h2>
 <div class="slide-content "><p>设 $(X,Y)$ 是二维随机变量。对于任意实数 $x,y$，二元函数</p>
-
 <div class="fragment"><p>$$F(x,y)=P\{(X\le x)\cap(Y\le y)\}=P\{X\le x,Y\le y\}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>称为 $(X,Y)$ 的分布函数，也称为随机变量 $X$ 和 $Y$ 的<strong>联合分布函数</strong>。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>称为 $(X,Y)$ 的分布函数，也称为随机变量 $X$ 和 $Y$ 的<strong>联合分布函数</strong>。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 6 页</span></footer>
 </section>
-<section class="slide" id="ch3-006" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-006" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>分布函数的几何含义</h2>
 <div class="slide-content "><p>$F(x,y)$ 的函数值，就是随机点落在下图所示区域内的概率。</p>
-
 <div class="fragment"><p><svg role="img" aria-label="cdf 示意图" xmlns="http://www.w3.org/2000/svg" class="diagram" data-name="cdf" viewBox="0 0 520 240"><rect x="30" y="55" width="295" height="165" fill="#d9ede9"/><path d="M325 30V225M35 55H440" stroke="#007a78" stroke-width="2.5"/><circle cx="325" cy="55" r="5" fill="#007a78"/><path d="M70 195H475M120 220V20" stroke="#1c3a47" stroke-width="2.5" fill="none"/><path d="M475 195l-10 -5v10zM120 20l-5 10h10z" fill="#1c3a47"/><text x="475" y="221">x</text><text x="97" y="24">y</text><text x="98" y="218">O</text><text x="342" y="52">(x, y)</text><text x="155" y="135">X ≤ x, Y ≤ y</text></svg></p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>区域包含边界：$$(-\infty,x]\times(-\infty,y]$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>区域包含边界：$$(-\infty,x]\times(-\infty,y]$$</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 7 页</span></footer>
 </section>
-<section class="slide" id="ch3-007" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-007" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>分布函数的性质 · 单调性与界限</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">1 · 对每个变量分别不减</div><p>$$\begin{aligned}x_2&gt;x_1&amp;\implies F(x_2,y)\ge F(x_1,y),\\y_2&gt;y_1&amp;\implies F(x,y_2)\ge F(x,y_1).\end{aligned}$$</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">2 · 取值范围</div><p>$$0\le F(x,y)\le 1$$</p>
-</div></div>
-<div class="fragment"><p>$$\begin{aligned}F(-\infty,y)&amp;=\lim_{x\to-\infty}F(x,y)=0,\\F(x,-\infty)&amp;=\lim_{y\to-\infty}F(x,y)=0.\end{aligned}$$</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">2 · 取值范围</div><p>$$0\le F(x,y)\le 1$$</p>
+</div></div><div class="fragment"><p>$$\begin{aligned}F(-\infty,y)&amp;=\lim_{x\to-\infty}F(x,y)=0,\\F(x,-\infty)&amp;=\lim_{y\to-\infty}F(x,y)=0.\end{aligned}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 8 页</span></footer>
 </section>
-<section class="slide" id="ch3-008" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-008" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>分布函数的性质 · 连续性与矩形概率</h2>
 <div class="slide-content "><p>$$\lim_{\substack{x\to-\infty\\y\to-\infty}}F(x,y)=0,\qquad\lim_{\substack{x\to+\infty\\y\to+\infty}}F(x,y)=1$$</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">3 · 分别右连续</div><p>$$F(x,y)=F(x+0,y)=F(x,y+0)$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">4 · 矩形增量非负</div><p>对于 $x_1&lt;x_2$、$y_1&lt;y_2$：</p>$$F(x_2,y_2)-F(x_2,y_1)-F(x_1,y_2)+F(x_1,y_1)\ge0$$</div></div></div>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">4 · 矩形增量非负</div><p>对于 $x_1 &lt; x_2$，$y_1 &lt; y_2$：</p>$$F(x_2,y_2)-F(x_2,y_1)-F(x_1,y_2)+F(x_1,y_1)\ge0$$</div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 9 页</span></footer>
 </section>
-<section class="slide" id="ch3-009" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-009" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>证明：矩形增量就是概率</h2>
-<div class="slide-content "><p>$$\begin{aligned}&amp;P\{x_1&lt;X\le x_2,\ y_1&lt;Y\le y_2\}\\&amp;=P\{X\le x_2,\ y_1&lt;Y\le y_2\}-P\{X\le x_1,\ y_1&lt;Y\le y_2\}\end{aligned}$$</p>
-
-<div class="fragment"><p>$$\begin{aligned}&amp;=P\{X\le x_2,Y\le y_2\}-P\{X\le x_2,Y\le y_1\}\\&amp;\quad-P\{X\le x_1,Y\le y_2\}+P\{X\le x_1,Y\le y_1\}\\&amp;=F(x_2,y_2)-F(x_2,y_1)-F(x_1,y_2)+F(x_1,y_1)\ge0.\end{aligned}$$</p>
-</div>
+<div class="slide-content "><p>$$
+\begin{aligned}
+P\{x_1 &lt; X \le x_2, \, y_1 &lt; Y \le y_2\} 
+&amp;= P\{X \le x_2, \, y_1 &lt; Y \le y_2\} - P\{X \le x_1, \, y_1 &lt; Y \le y_2\}\\
+&amp;= P\{X \le x_2, Y \le y_2\} - P\{X \le x_2, Y \le y_1\} \\
+&amp;\quad - P\{X \le x_1, Y \le y_2\} + P\{X \le x_1, Y \le y_1\} \\[1ex]
+&amp;= F(x_2, y_2) - F(x_2, y_1) - F(x_1, y_2) + F(x_1, y_1) \\
+&amp;\ge 0.
+\end{aligned}
+$$</p>
 <div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>非负性来自事件的概率非负。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 10 页</span></footer>
 </section>
-<section class="slide" id="ch3-010" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-010" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>二维离散型随机变量</h2>
 <div class="slide-content "><p>若二维随机变量 $(X,Y)$ 所取的可能值是<strong>有限对</strong>或<strong>无限可列多对</strong>，则称 $(X,Y)$ 为二维离散型随机变量。</p>
-
 <div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>描述它的分布，需要给出每一对可能取值的概率。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 11 页</span></footer>
 </section>
-<section class="slide" id="ch3-011" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-011" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>联合分布律</h2>
 <div class="slide-content "><p>设二维离散型随机变量 $(X,Y)$ 的所有可能取值为 $(x_i,y_j)$，$i,j=1,2,\ldots$。记</p>
-
 <div class="fragment"><p>$$P\{X=x_i,Y=y_j\}=p_{ij},\qquad i,j=1,2,\ldots$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>称为 $(X,Y)$ 的分布律，或 $X$ 和 $Y$ 的联合分布律。</p>
-</div></div>
-<div class="fragment"><p>$$p_{ij}\ge0,\qquad\sum_{i=1}^{\infty}\sum_{j=1}^{\infty}p_{ij}=1$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>称为 $(X,Y)$ 的分布律，或 $X$ 和 $Y$ 的联合分布律。</p>
+</div></div><div class="fragment"><p>$$p_{ij}\ge0,\qquad\sum_{i=1}^{\infty}\sum_{j=1}^{\infty}p_{ij}=1$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 12 页</span></footer>
 </section>
-<section class="slide" id="ch3-012" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-012" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>联合分布律的表格表示</h2>
 <div class="slide-content "><p>列对应 $X$ 的取值，行对应 $Y$ 的取值。</p>
-
-<div class="fragment"><div class="table-wrap"><table><thead><tr><th>$Y\backslash X$</th><th>$x_1$</th><th>$x_2$</th><th>$\cdots$</th><th>$x_i$</th><th>$\cdots$</th></tr></thead><tbody><tr><td>$y_1$</td><td>$p_{11}$</td><td>$p_{21}$</td><td>$\cdots$</td><td>$p_{i1}$</td><td>$\cdots$</td></tr><tr><td>$y_2$</td><td>$p_{12}$</td><td>$p_{22}$</td><td>$\cdots$</td><td>$p_{i2}$</td><td>$\cdots$</td></tr><tr><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\ddots$</td><td>$\vdots$</td><td>$$&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$y_j$&lt;/td&gt;&lt;td&gt;$p_{1j}$&lt;/td&gt;&lt;td&gt;$p_{2j}$&lt;/td&gt;&lt;td&gt;$\cdots$&lt;/td&gt;&lt;td&gt;$p_{ij}$&lt;/td&gt;&lt;td&gt;$\cdots$</td></tr></tbody></table></div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>表中每个数都是一对取值的联合概率。</p>
+<div class="fragment"><p>$$
+\begin{array}{c|ccccc}
+Y\backslash X &amp; x_1 &amp; x_2 &amp; \cdots &amp; x_i &amp; \cdots \\
+\hline
+y_1 &amp; p_{11} &amp; p_{21} &amp; \cdots &amp; p_{i1} &amp; \cdots \\
+y_2 &amp; p_{12} &amp; p_{22} &amp; \cdots &amp; p_{i2} &amp; \cdots \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; {} \\
+y_j &amp; p_{1j} &amp; p_{2j} &amp; \cdots &amp; p_{ij} &amp; \cdots
+\end{array}
+$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>表中每个数都是一对取值的联合概率。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 13 页</span></footer>
 </section>
-<section class="slide" id="ch3-013" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-013" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 1 · 分两步随机取整数</h2>
 <div class="slide-content "><p>随机变量 $X$ 在 $1,2,3,4$ 中等可能地取值。当 $X=i$ 时，$Y$ 在 $1,\ldots,i$ 中等可能地取一个整数。求 $(X,Y)$ 的分布律。</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">解 · 乘法公式</div><p>$$\begin{aligned}P\{X=i,Y=j\}&amp;=P\{Y=j\mid X=i\}P\{X=i\}\\&amp;=\frac1i\cdot\frac14,\quad i=1,2,3,4,\quad j=1,\ldots,i.\end{aligned}$$</p>
-</div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>只有 $j\le i$ 的位置具有非零概率。</p>
+</div></div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>只有 $j\le i$ 的位置具有非零概率。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 14 页</span></footer>
 </section>
-<section class="slide" id="ch3-014" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-014" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 1 · 联合分布表</h2>
-<div class="slide-content "><div class="table-wrap"><table><thead><tr><th>$Y\backslash X$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th></tr></thead><tbody><tr><td>$1$</td><td>$\frac14$</td><td>$\frac18$</td><td>$\frac1{12}$</td><td>$\frac1{16}$</td></tr><tr><td>$2$</td><td>$0$</td><td>$\frac18$</td><td>$\frac1{12}$</td><td>$\frac1{16}$</td></tr><tr><td>$3$</td><td>$0$</td><td>$0$</td><td>$\frac1{12}$</td><td>$\frac1{16}$</td></tr><tr><td>$4$</td><td>$0$</td><td>$0$</td><td>$0$</td><td>$\frac1{16}$</td></tr></tbody></table></div>
+<div class="slide-content "><p>$$
+\def\arraystretch{1.4}
+\begin{array}{c|cccc}
+Y\backslash X &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+\hline
+1 &amp; \dfrac14 &amp; \dfrac18 &amp; \dfrac1{12} &amp; \dfrac1{16} \\[0.65em]
+2 &amp; 0 &amp; \dfrac18 &amp; \dfrac1{12} &amp; \dfrac1{16} \\[0.65em]
+3 &amp; 0 &amp; 0 &amp; \dfrac1{12} &amp; \dfrac1{16} \\[0.65em]
+4 &amp; 0 &amp; 0 &amp; 0 &amp; \dfrac1{16}
+\end{array}
+$$</p>
 <div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>各列分别对应先取到 $X=1,2,3,4$ 的情况。所有表项的和等于 $1$。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 15 页</span></footer>
 </section>
-<section class="slide" id="ch3-015" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-015" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 2 · 随机抽取圆珠笔</h2>
 <div class="slide-content "><p>盒子中有 $3$ 支蓝笔、$2$ 支红笔、$3$ 支绿笔，随机抽取两支。以 $X,Y$ 分别表示抽出的蓝笔数和红笔数，求 $(X,Y)$ 的分布律。</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">解 · 可能取值</div><p>$$(0,0),\ (0,1),\ (1,0),\ (1,1),\ (0,2),\ (2,0)$$</p>
-</div></div>
-<div class="fragment"><p>$$P\{X=i,Y=j\}=\frac{\binom3i\binom2j\binom3{2-i-j}}{\binom82},\quad i,j\ge0,\quad i+j\le2$$</p>
+</div></div><div class="fragment"><p>$$P\{X=i,Y=j\}=\frac{\binom3i\binom2j\binom3{2-i-j}}{\binom82},\quad i,j\ge0,\quad i+j\le2$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 16 页</span></footer>
 </section>
-<section class="slide" id="ch3-016" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-016" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 2 · 计算联合概率（1）</h2>
 <div class="slide-content "><p>$$P\{X=0,Y=0\}=\frac{\binom30\binom20\binom32}{\binom82}=\frac3{28}$$</p>
-
 <div class="fragment"><p>$$P\{X=0,Y=1\}=\frac{\binom30\binom21\binom31}{\binom82}=\frac3{14}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>分母是从 $8$ 支笔中选两支的总方式数；分子按蓝、红、绿分别计数。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>分母是从 $8$ 支笔中选两支的总方式数；分子按蓝、红、绿分别计数。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 16（续） 页</span></footer>
 </section>
-<section class="slide" id="ch3-017" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-017" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 2 · 计算联合概率（2）</h2>
 <div class="slide-content "><p>$$\begin{aligned}P\{X=1,Y=1\}&amp;=\frac{\binom31\binom21\binom30}{\binom82}=\frac3{14},\\P\{X=0,Y=2\}&amp;=\frac{\binom30\binom22\binom30}{\binom82}=\frac1{28},\\P\{X=1,Y=0\}&amp;=\frac{\binom31\binom20\binom31}{\binom82}=\frac9{28},\\P\{X=2,Y=0\}&amp;=\frac{\binom32\binom20\binom30}{\binom82}=\frac3{28}.\end{aligned}$$</p>
 </div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 17 页</span></footer>
 </section>
-<section class="slide" id="ch3-018" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-018" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 2 · 联合分布表</h2>
-<div class="slide-content "><div class="table-wrap"><table><thead><tr><th>$Y\backslash X$</th><th>$0$</th><th>$1$</th><th>$2$</th></tr></thead><tbody><tr><td>$0$</td><td>$\frac3{28}$</td><td>$\frac9{28}$</td><td>$\frac3{28}$</td></tr><tr><td>$1$</td><td>$\frac3{14}$</td><td>$\frac3{14}$</td><td>$0$</td></tr><tr><td>$2$</td><td>$\frac1{28}$</td><td>$0$</td><td>$0$</td></tr></tbody></table></div>
+<div class="slide-content "><p>$$
+\def\arraystretch{1.4}
+\begin{array}{c|ccc}
+Y\backslash X &amp; 0 &amp; 1 &amp; 2 \\
+\hline
+0 &amp; \dfrac3{28} &amp; \dfrac9{28} &amp; \dfrac3{28} \\[0.65em]
+1 &amp; \dfrac3{14} &amp; \dfrac3{14} &amp; 0 \\[0.65em]
+2 &amp; \dfrac1{28} &amp; 0 &amp; 0
+\end{array}
+$$</p>
 <div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>不可能取到的组合，其联合概率为 $0$。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 18 页</span></footer>
 </section>
-<section class="slide" id="ch3-019" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-019" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · 不放回取球</h2>
-<div class="slide-content "><p>袋中有三个球，分别标有数字 $1,2,2$。等可能地取一个球，不放回，再取一个。以 $X,Y$ 分别记两次取到的数字，求联合分布律与分布函数。</p>
-
+<div class="slide-content "><p>袋中有三个球，分别标有数字 $1,2,2$。等可能地取一个球，不放回，再取一个。以 $X,Y$ 分别记两次取到的数字，求<strong>联合分布律</strong>与<strong>分布函数</strong>。</p>
 <div class="fragment"><div class="component component-card card"><div class="component-label label">解 · 可能取值</div><p>$$(1,2),\ (2,1),\ (2,2)$$</p>
-</div></div>
-<div class="fragment"><p>$$\begin{aligned}P\{X=1,Y=2\}&amp;=\frac13\cdot\frac22=\frac13,\\P\{X=2,Y=1\}&amp;=\frac23\cdot\frac12=\frac13,\\P\{X=2,Y=2\}&amp;=\frac23\cdot\frac12=\frac13.\end{aligned}$$</p>
+</div></div><div class="fragment"><p>$$\begin{aligned}P\{X=1,Y=2\}&amp;=\frac13\cdot\frac22=\frac13,\\P\{X=2,Y=1\}&amp;=\frac23\cdot\frac12=\frac13,\\P\{X=2,Y=2\}&amp;=\frac23\cdot\frac12=\frac13.\end{aligned}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 19 页</span></footer>
 </section>
-<section class="slide" id="ch3-020" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-020" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · 联合分布律</h2>
 <div class="slide-content "><p>$$p_{11}=0,\qquad p_{12}=p_{21}=p_{22}=\frac13$$</p>
-
-<div class="fragment"><div class="table-wrap"><table><thead><tr><th>$Y\backslash X$</th><th>$1$</th><th>$2$</th></tr></thead><tbody><tr><td>$1$</td><td>$0$</td><td>$\frac13$</td></tr><tr><td>$2$</td><td>$\frac13$</td><td>$\frac13$</td></tr></tbody></table></div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>接下来把左下方区域内的点概率相加，求分布函数。</p>
+<div class="fragment"><p>$$
+\def\arraystretch{1.4}
+\begin{array}{c|cc}
+Y\backslash X &amp; 1 &amp; 2 \\
+\hline
+1 &amp; 0 &amp; \dfrac13 \\[0.65em]
+2 &amp; \dfrac13 &amp; \dfrac13
+\end{array}
+$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>接下来把左下方区域内的点概率相加，求分布函数。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 20 页</span></footer>
 </section>
-<section class="slide" id="ch3-021" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-021" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · 分区域求分布函数（1）</h2>
-<div class="slide-content "><div class="component component-card card"><div class="component-label label">情形 1</div><p>当 $x&lt;1$ 或 $y&lt;1$ 时：</p>$$F(x,y)=P\{X\le x,Y\le y\}=0$$</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">情形 2</div><p>当 $1\le x&lt;2$、$1\le y&lt;2$ 时：</p>$$F(x,y)=p_{11}=0$$</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">情形 3</div><p>当 $1\le x&lt;2$、$y\ge2$ 时：</p>$$F(x,y)=p_{11}+p_{12}=\frac13$$</div></div>
+<div class="slide-content "><div class="columns"><div class="column"><p>$$
+\def\arraystretch{1.4}
+\begin{array}{c|cc}
+Y\backslash X &amp; 1 &amp; 2 \\
+\hline
+1 &amp; 0 &amp; \dfrac13 \\[0.65em]
+2 &amp; \dfrac13 &amp; \dfrac13
+\end{array}
+$$</p>
 <div class="fragment"><p><svg role="img" aria-label="discrete 示意图" xmlns="http://www.w3.org/2000/svg" class="diagram" data-name="discrete" viewBox="0 0 520 240"><rect x="210" y="65" width="155" height="90" fill="#edf7f6"/><path d="M210 35V220M365 35V220M160 65H440M160 155H440" stroke="#a7c6c0" stroke-dasharray="5 5" fill="none"/><path d="M70 195H475M120 220V20" stroke="#1c3a47" stroke-width="2.5" fill="none"/><path d="M475 195l-10 -5v10zM120 20l-5 10h10z" fill="#1c3a47"/><text x="475" y="221">x</text><text x="97" y="24">y</text><text x="98" y="218">O</text><circle cx="210" cy="65" r="6" fill="#007a78"/><circle cx="365" cy="155" r="6" fill="#007a78"/><circle cx="365" cy="65" r="6" fill="#007a78"/><circle cx="210" cy="155" r="5" fill="white" stroke="#91b8b2"/><text x="200" y="189">1</text><text x="358" y="189">2</text><text x="169" y="160">1</text><text x="169" y="70">2</text><text x="235" y="118">每个实心点：1/3</text></svg></p>
-</div></div>
+</div></div><div class="column"><div class="fragment"><div class="component component-card card"><div class="component-label label">情形 1</div><p>当 $x&lt;1$ 或 $y&lt;1$ 时：</p>$$F(x,y)=P\{X\le x,Y\le y\}=0$$</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">情形 2</div><p>当 $1\le x&lt;2$、$1\le y&lt;2$ 时：</p>$$F(x,y)=p_{11}=0$$</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">情形 3</div><p>当 $1\le x&lt;2$、$y\ge2$ 时：</p>$$F(x,y)=p_{11}+p_{12}=\frac13$$</div></div></div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 21 页</span></footer>
 </section>
-<section class="slide" id="ch3-022" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-022" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · 分区域求分布函数（2）</h2>
 <div class="slide-content "><p><svg role="img" aria-label="discrete 示意图" xmlns="http://www.w3.org/2000/svg" class="diagram" data-name="discrete" viewBox="0 0 520 240"><rect x="210" y="65" width="155" height="90" fill="#edf7f6"/><path d="M210 35V220M365 35V220M160 65H440M160 155H440" stroke="#a7c6c0" stroke-dasharray="5 5" fill="none"/><path d="M70 195H475M120 220V20" stroke="#1c3a47" stroke-width="2.5" fill="none"/><path d="M475 195l-10 -5v10zM120 20l-5 10h10z" fill="#1c3a47"/><text x="475" y="221">x</text><text x="97" y="24">y</text><text x="98" y="218">O</text><circle cx="210" cy="65" r="6" fill="#007a78"/><circle cx="365" cy="155" r="6" fill="#007a78"/><circle cx="365" cy="65" r="6" fill="#007a78"/><circle cx="210" cy="155" r="5" fill="white" stroke="#91b8b2"/><text x="200" y="189">1</text><text x="358" y="189">2</text><text x="169" y="160">1</text><text x="169" y="70">2</text><text x="235" y="118">每个实心点：1/3</text></svg></p>
-
-<div class="fragment"><div class="component component-card card"><div class="component-label label">情形 4</div><p>当 $x\ge2$、$1\le y&lt;2$ 时：</p>$$F(x,y)=p_{11}+p_{21}=\frac13$$</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">情形 5</div><p>当 $x\ge2$、$y\ge2$ 时：</p>$$F(x,y)=p_{11}+p_{21}+p_{12}+p_{22}=1$$</div></div></div>
+<div class="fragment"><div class="component component-card card"><div class="component-label label">情形 4</div><p>当 $x\ge2$、$1\le y&lt;2$ 时：</p>$$F(x,y)=p_{11}+p_{21}=\frac13$$</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">情形 5</div><p>当 $x\ge2$、$y\ge2$ 时：</p>$$F(x,y)=p_{11}+p_{21}+p_{12}+p_{22}=1$$</div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 22 页</span></footer>
 </section>
-<section class="slide" id="ch3-023" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-023" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · 分布函数</h2>
-<div class="slide-content "><p>$$F(x,y)=\begin{cases}0,&amp;x&lt;1\ \text{or}\ y&lt;1,\\\frac13,&amp;1\le x&lt;2,\ y\ge2,\\\frac13,&amp;x\ge2,\ 1\le y&lt;2,\\1,&amp;x\ge2,\ y\ge2.\end{cases}$$</p>
-
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>中间两种情形都只包含一个非零概率点。</p>
+<div class="slide-content "><div class="columns"><div class="column"><p>$$F(x,y)=\begin{cases}
+0,&amp;x&lt;1\ \text{or}\ y&lt;1,
+\\0,&amp;1\le x&lt;2,\ 1\le y&lt;2,
+\\\frac13,&amp;1\le x&lt;2,\ y\ge2,
+\\\frac13,&amp;x\ge2,\ 1\le y&lt;2,
+\\1,&amp;x\ge2,\ y\ge2.
+\end{cases}$$</p>
+</div><div class="column"><div class="cdf-region" data-cdf-region>
+  <div class="cdf-region-heading"><span>联合分布函数 · 区域探测</span><button type="button" data-cdf-points aria-pressed="true">隐藏概率点</button></div>
+  <svg class="cdf-region-chart" viewBox="0 0 560 280" role="img" tabindex="0" aria-label="联合分布函数区域图。移动指针或使用方向键探测坐标，按 Shift 加方向键精细调整。"></svg>
+  <div class="cdf-region-readout"><span data-cdf-coordinate></span><strong data-cdf-value></strong></div>
+  <div class="cdf-region-presets" aria-label="典型区域测试"><span>区域</span><button type="button" data-cdf-sample="0.5,0.5">(0.5, 0.5)</button><button type="button" data-cdf-sample="1.5,1.5">(1.5, 1.5)</button><button type="button" data-cdf-sample="1.5,2.5">(1.5, 2.5)</button><button type="button" data-cdf-sample="2.5,1.5">(2.5, 1.5)</button><button type="button" data-cdf-sample="2.5,2.5">(2.5, 2.5)</button></div>
+  <div class="cdf-region-presets" aria-label="边界测试"><span>边界</span><button type="button" data-cdf-sample="1,1">(1, 1)</button><button type="button" data-cdf-sample="1,2">(1, 2)</button><button type="button" data-cdf-sample="2,1">(2, 1)</button><button type="button" data-cdf-sample="2,2">(2, 2)</button><span class="cdf-region-point-key">● 每个实心点 p = 1/3</span></div>
+  <div class="cdf-region-help">移动 / 触摸探测 · 方向键微调 · 边界按 ≤ 计入</div>
+</div></div></div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>取值为 $\frac13$ 的两种情形都只包含一个非零概率点。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 23 页</span></footer>
 </section>
-<section class="slide" id="ch3-024" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-024" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>离散型联合分布函数</h2>
 <div class="slide-content "><p>二维离散型随机变量 $(X,Y)$ 的分布函数可归纳为</p>
-
 <div class="fragment"><p>$$F(x,y)=\sum_{x_i\le x}\sum_{y_j\le y}p_{ij}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>对所有满足 $x_i\le x$、$y_j\le y$ 的 $i,j$ 求和。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>对所有满足 $x_i\le x$、$y_j\le y$ 的 $i,j$ 求和。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 24 页</span></footer>
 </section>
-<section class="slide" id="ch3-025" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-025" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>二维连续型随机变量</h2>
 <div class="slide-content "><p>对于 $(X,Y)$ 的分布函数 $F(x,y)$，如果存在非负可积函数 $f(x,y)$，使对任意 $x,y$ 都有</p>
-
 <div class="fragment"><p>$$F(x,y)=\int_{-\infty}^{y}\int_{-\infty}^{x}f(u,v)\,\mathrm du\,\mathrm dv$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>则称 $(X,Y)$ 为二维连续型随机变量，$f(x,y)$ 为其<strong>联合概率密度</strong>。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>则称 $(X,Y)$ 为二维连续型随机变量，$f(x,y)$ 为其<strong>联合概率密度</strong>。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 25 页</span></footer>
 </section>
-<section class="slide" id="ch3-026" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-026" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>联合概率密度的性质</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">1 · 非负性</div><p>$$f(x,y)\ge0$$</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">2 · 归一化</div><p>$$\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dx\,\mathrm dy=1$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">3 · 区域概率</div><p>$$P\{(X,Y)\in G\}=\iint_G f(x,y)\,\mathrm dx\,\mathrm dy$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">4 · 密度与分布函数</div><p>若 $f$ 在 $(x,y)$ 连续，则</p>$$\frac{\partial^2 F(x,y)}{\partial x\,\partial y}=f(x,y).$$</div></div></div>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">2 · 归一化</div><p>$$\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dx\,\mathrm dy=1$$</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">3 · 区域概率</div><p>$$P\{(X,Y)\in G\}=\iint_G f(x,y)\,\mathrm dx\,\mathrm dy$$</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">4 · 密度与分布函数</div><p>若 $f$ 在 $(x,y)$ 连续，则</p>$$\frac{\partial^2 F(x,y)}{\partial x\,\partial y}=f(x,y).$$</div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 26 页</span></footer>
 </section>
-<section class="slide" id="ch3-027" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-027" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>概率密度的几何含义</h2>
 <div class="slide-content "><p>几何上，$z=f(x,y)$ 表示空间中的一个曲面。</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">总体积为 1</div><p>$$\iint_{\mathbb R^2}f(x,y)\,\mathrm dx\,\mathrm dy=1$$<p>曲面与平面之间的全部体积等于 $1$。</p></p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">区域上的体积就是概率</div><p>$$P\{(X,Y)\in G\}=\iint_Gf(x,y)\,\mathrm dx\,\mathrm dy$$<p>以 $G$ 为底、以曲面 $z=f(x,y)$ 为顶面的柱体，其体积等于上述概率。</p></p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">区域上的体积就是概率</div><p>$$P\{(X,Y)\in G\}=\iint_Gf(x,y)\,\mathrm dx\,\mathrm dy$$<p>以 $G$ 为底、以曲面 $z=f(x,y)$ 为顶面的柱体，其体积等于上述概率。</p></p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 27 页</span></footer>
 </section>
-<section class="slide" id="ch3-028" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-028" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 4 · 由密度求分布函数与概率</h2>
 <div class="slide-content "><p>$$f(x,y)=\begin{cases}2e^{-(2x+y)},&amp;x&gt;0,\ y&gt;0,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">问题</div><p>（1）求分布函数 $F(x,y)$。</p><p>（2）求概率 $P\{Y\le X\}$。</p></div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 28 页</span></footer>
 </section>
-<section class="slide" id="ch3-029" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-029" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 4 · 求联合分布函数</h2>
 <div class="slide-content "><p>$$F(x,y)=\int_{-\infty}^{y}\int_{-\infty}^{x}f(u,v)\,\mathrm du\,\mathrm dv$$</p>
-
 <div class="fragment"><p>$$F(x,y)=\int_0^y\int_0^x2e^{-(2u+v)}\,\mathrm du\,\mathrm dv,\quad x&gt;0,\ y&gt;0$$</p>
-</div>
-<div class="fragment"><p>$$F(x,y)=\begin{cases}(1-e^{-2x})(1-e^{-y}),&amp;x&gt;0,\ y&gt;0,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
+</div><div class="fragment"><p>$$F(x,y)=\begin{cases}(1-e^{-2x})(1-e^{-y}),&amp;x&gt;0,\ y&gt;0,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 29 页</span></footer>
 </section>
-<section class="slide" id="ch3-030" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-030" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 4 · 求区域概率</h2>
-<div class="slide-content "><p>把 $(X,Y)$ 看作平面随机点的坐标，事件 $Y\le X$ 对应第一象限中直线下方的区域 $G$。</p><div class="diagram" data-diagram="triangle"></div>
+<div class="slide-content "><p>把 $(X,Y)$ 看作平面随机点的坐标，事件 $Y\le X$ 对应第一象限中直线下方的区域 $G$。</p>
+<p><svg role="img" aria-label="区域G" xmlns="http://www.w3.org/2000/svg" class="diagram" data-name="triangle" viewBox="0 0 520 240"><path d="M120 195L420 30V195Z" fill="#d9ede9"/><path d="M100 215L425 25" stroke="#007a78" stroke-width="3"/><path d="M70 195H475M120 220V20" stroke="#1c3a47" stroke-width="2.5" fill="none"/><path d="M475 195l-10 -5v10zM120 20l-5 10h10z" fill="#1c3a47"/><text x="475" y="221">x</text><text x="97" y="24">y</text><text x="98" y="218">O</text><text x="330" y="76">y = x</text><text x="325" y="150">G</text></svg></p>
 <div class="fragment"><p>$$\begin{aligned}P\{Y\le X\}&amp;=\iint_Gf(x,y)\,\mathrm dx\,\mathrm dy\\&amp;=\int_0^{+\infty}\int_y^{+\infty}2e^{-(2x+y)}\,\mathrm dx\,\mathrm dy=\frac13.\end{aligned}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 30 页</span></footer>
 </section>
-<section class="slide" id="ch3-031" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-031" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>推广：n 维随机变量</h2>
 <div class="slide-content "><p>设 $E$ 是随机试验，样本空间为 $S=\{e\}$，$X_1=X_1(e),\ldots,X_n=X_n(e)$ 都是定义在 $S$ 上的随机变量。</p>
-
 <div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>它们构成的向量 $(X_1,\ldots,X_n)$ 称为 <strong>$n$ 维随机向量</strong>或 <strong>$n$ 维随机变量</strong>。</p>
-</div></div>
-<div class="fragment"><p>对于任意 $n$ 个实数 $x_1,\ldots,x_n$，其联合分布函数为</p>
-</div>
-<div class="fragment"><p>$$F(x_1,\ldots,x_n)=P\{X_1\le x_1,\ldots,X_n\le x_n\}$$</p>
+</div></div><div class="fragment"><p>对于任意 $n$ 个实数 $x_1,\ldots,x_n$，其联合分布函数为</p>
+</div><div class="fragment"><p>$$F(x_1,\ldots,x_n)=P\{X_1\le x_1,\ldots,X_n\le x_n\}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 31 页</span></footer>
 </section>
-<section class="slide" id="ch3-032" data-type="normal" data-chapter="3" data-source="content/chap03/01-two-dimensional-random-variables.md">
+<section class="slide" id="ch3-032" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/01-two-dimensional-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>第一节小结</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">联合分布函数</div><p>$$F(x,y)=P\{X\le x,Y\le y\}$$</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">离散型 · 分布律与分布函数</div><p>$$P\{X=x_i,Y=y_j\}=p_{ij},\qquad F(x,y)=\sum_{x_i\le x}\sum_{y_j\le y}p_{ij}$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">连续型 · 联合概率密度</div><p>$$F(x,y)=\int_{-\infty}^{y}\int_{-\infty}^{x}f(u,v)\,\mathrm du\,\mathrm dv$$</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">离散型 · 分布律与分布函数</div><p>$$P\{X=x_i,Y=y_j\}=p_{ij},\qquad F(x,y)=\sum_{x_i\le x}\sum_{y_j\le y}p_{ij}$$</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">连续型 · 联合概率密度</div><p>$$F(x,y)=\int_{-\infty}^{y}\int_{-\infty}^{x}f(u,v)\,\mathrm du\,\mathrm dv$$</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 32 页</span></footer>
 </section>
-<section class="slide" id="ch3-033" data-type="section" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-033" data-type="section" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>边缘分布</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">01</div><p>边缘分布函数</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">02</div><p>离散型随机变量的边缘分布律</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">03</div><p>连续型随机变量的边缘分布</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">04</div><p>小结</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">02</div><p>离散型随机变量的边缘分布律</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">03</div><p>连续型随机变量的边缘分布</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">04</div><p>小结</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 33 页</span></footer>
 </section>
-<section class="slide" id="ch3-034" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-034" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>从联合分布到边缘分布</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">问题</div><p>已知 $(X,Y)$ 的分布，如何确定 $X$、$Y$ 各自的分布？</p>
-</div>
-<div class="fragment"><p>$$F(x,y)=P\{X\le x,Y\le y\},\qquad F_X(x)=P\{X\le x\}$$</p>
-</div>
-<div class="fragment"><p>$$P\{X\le x\}=P\{X\le x,Y&lt;+\infty\}=F(x,+\infty)$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>让另一个变量不受限制，即得到边缘分布函数。</p>
+</div><div class="fragment"><p>$$F(x,y)=P\{X\le x,Y\le y\},\qquad F_X(x)=P\{X\le x\}$$</p>
+</div><div class="fragment"><p>$$P\{X\le x\}=P\{X\le x,Y&lt;+\infty\}=F(x,+\infty)$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>让另一个变量不受限制，即得到边缘分布函数。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 34 页</span></footer>
 </section>
-<section class="slide" id="ch3-035" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-035" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>边缘分布函数的定义</h2>
 <div class="slide-content "><p>设 $F(x,y)$ 为 $(X,Y)$ 的联合分布函数。</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">关于 X 的边缘分布函数</div><p>$$F_X(x)=F(x,+\infty)=\lim_{y\to+\infty}F(x,y)=P\{X\le x\}$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">关于 Y 的边缘分布函数</div><p>$$F_Y(y)=F(+\infty,y)=\lim_{x\to+\infty}F(x,y)=P\{Y\le y\}$$</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">关于 Y 的边缘分布函数</div><p>$$F_Y(y)=F(+\infty,y)=\lim_{x\to+\infty}F(x,y)=P\{Y\le y\}$$</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 35 页</span></footer>
 </section>
-<section class="slide" id="ch3-036" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-036" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>离散型随机变量的边缘分布律</h2>
 <div class="slide-content "><p>$$P\{X=x_i,Y=y_j\}=p_{ij},\quad i,j=1,2,\ldots$$</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">关于 X</div><p>$$p_{i\cdot}=\sum_{j=1}^{\infty}p_{ij}=P\{X=x_i\},\quad i=1,2,\ldots$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">关于 Y</div><p>$$p_{\cdot j}=\sum_{i=1}^{\infty}p_{ij}=P\{Y=y_j\},\quad j=1,2,\ldots$$</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">关于 Y</div><p>$$p_{\cdot j}=\sum_{i=1}^{\infty}p_{ij}=P\{Y=y_j\},\quad j=1,2,\ldots$$</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 36 页</span></footer>
 </section>
-<section class="slide" id="ch3-037" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-037" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>边缘分布律：按列、按行求和</h2>
-<div class="slide-content "><div class="table-wrap"><table><thead><tr><th>$Y\backslash X$</th><th>$x_1$</th><th>$x_2$</th><th>$\cdots$</th><th>$x_i$</th></tr></thead><tbody><tr><td>$y_1$</td><td>$p_{11}$</td><td>$p_{21}$</td><td>$\cdots$</td><td>$p_{i1}$</td></tr><tr><td>$y_2$</td><td>$p_{12}$</td><td>$p_{22}$</td><td>$\cdots$</td><td>$p_{i2}$</td></tr><tr><td>$y_j$</td><td>$p_{1j}$</td><td>$p_{2j}$</td><td>$\cdots$</td><td>$p_{ij}$</td></tr></tbody></table></div>
+<div class="slide-content "><p>$$
+\begin{array}{c|cccc}
+Y\backslash X &amp; x_1 &amp; x_2 &amp; \cdots &amp; x_i \\
+\hline
+y_1 &amp; p_{11} &amp; p_{21} &amp; \cdots &amp; p_{i1} \\
+y_2 &amp; p_{12} &amp; p_{22} &amp; \cdots &amp; p_{i2} \\
+y_j &amp; p_{1j} &amp; p_{2j} &amp; \cdots &amp; p_{ij}
+\end{array}
+$$</p>
 <div class="fragment"><div class="component component-card card"><div class="component-label label">按列求和得到 X</div><p>$$P\{X=x_i\}=\sum_{j=1}^{\infty}p_{ij}$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">按行求和得到 Y</div><p>$$P\{Y=y_j\}=\sum_{i=1}^{\infty}p_{ij}$$</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">按行求和得到 Y</div><p>$$P\{Y=y_j\}=\sum_{i=1}^{\infty}p_{ij}$$</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 37 页</span></footer>
 </section>
-<section class="slide" id="ch3-038" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-038" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>离散型边缘分布函数</h2>
 <div class="slide-content "><p>$$F_X(x)=F(x,+\infty)=\sum_{x_i\le x}\sum_{j=1}^{\infty}p_{ij}$$</p>
-
 <div class="fragment"><p>$$F_Y(y)=F(+\infty,y)=\sum_{y_j\le y}\sum_{i=1}^{\infty}p_{ij}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>先把另一个变量的所有取值求和，再累加到指定的阈值。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>先把另一个变量的所有取值求和，再累加到指定的阈值。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 38 页</span></footer>
 </section>
-<section class="slide" id="ch3-039" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-039" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 1 · 求边缘分布律</h2>
 <div class="slide-content "><p>已知下列联合分布律，求其边缘分布律。</p>
-
-<div class="fragment"><div class="table-wrap"><table><thead><tr><th>$Y\backslash X$</th><th>$0$</th><th>$1$</th></tr></thead><tbody><tr><td>$0$</td><td>$\frac{16}{49}$</td><td>$\frac{12}{49}$</td></tr><tr><td>$1$</td><td>$\frac{12}{49}$</td><td>$\frac9{49}$</td></tr></tbody></table></div></div></div>
+<div class="fragment"><p>$$
+\def\arraystretch{1.4}
+\begin{array}{c|cc}
+Y\backslash X &amp; 0 &amp; 1 \\
+\hline
+0 &amp; \dfrac{16}{49} &amp; \dfrac{12}{49} \\[0.65em]
+1 &amp; \dfrac{12}{49} &amp; \dfrac9{49}
+\end{array}
+$$</p>
+</div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 39 页</span></footer>
 </section>
-<section class="slide" id="ch3-040" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-040" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 1 · 求和与结论</h2>
-<div class="slide-content "><div class="table-wrap"><table><thead><tr><th>$Y\backslash X$</th><th>$0$</th><th>$1$</th><th>$P\{Y=y\}$</th></tr></thead><tbody><tr><td>$0$</td><td>$\frac{16}{49}$</td><td>$\frac{12}{49}$</td><td>$\frac47$</td></tr><tr><td>$1$</td><td>$\frac{12}{49}$</td><td>$\frac9{49}$</td><td>$\frac37$</td></tr><tr class="total"><td>$P\{X=x\}$</td><td>$\frac47$</td><td>$\frac37$</td><td>$1$</td></tr></tbody></table></div>
+<div class="slide-content "><p>$$
+\def\arraystretch{1.4}
+\begin{array}{c|cc|c}
+Y\backslash X &amp; 0 &amp; 1 &amp; P\{Y=y\} \\
+\hline
+0 &amp; \dfrac{16}{49} &amp; \dfrac{12}{49} &amp; \dfrac47 \\[0.65em]
+1 &amp; \dfrac{12}{49} &amp; \dfrac9{49} &amp; \dfrac37 \\[0.65em]
+\hline
+P\{X=x\} &amp; \dfrac47 &amp; \dfrac37 &amp; 1
+\end{array}
+$$</p>
 <div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>联合分布可以确定边缘分布；一般情况下，仅由边缘分布不能唯一确定联合分布。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 40 页</span></footer>
 </section>
-<section class="slide" id="ch3-041" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-041" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 2 · 因子个数的联合分布</h2>
 <div class="slide-content "><p>整数 $N$ 等可能地在 $1,2,\ldots,10$ 中取值。$D=D(N)$ 是能整除 $N$ 的正整数个数，$F=F(N)$ 是能整除 $N$ 的素数个数。求 $D,F$ 的联合分布律与边缘分布律。</p>
-
-<div class="fragment"><div class="table-wrap"><table><thead><tr><th>$N$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th><th>$5$</th><th>$6$</th><th>$7$</th><th>$8$</th><th>$9$</th><th>$10$</th></tr></thead><tbody><tr><td>$D$</td><td>$1$</td><td>$2$</td><td>$2$</td><td>$3$</td><td>$2$</td><td>$4$</td><td>$2$</td><td>$4$</td><td>$3$</td><td>$4$</td></tr><tr><td>$F$</td><td>$0$</td><td>$1$</td><td>$1$</td><td>$1$</td><td>$1$</td><td>$2$</td><td>$1$</td><td>$1$</td><td>$1$</td><td>$2$</td></tr></tbody></table></div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>每个样本点的概率均为 $1/10$。</p>
+<div class="fragment"><p>$$
+\begin{array}{c|cccccccccc}
+N &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+\hline
+D &amp; 1 &amp; 2 &amp; 2 &amp; 3 &amp; 2 &amp; 4 &amp; 2 &amp; 4 &amp; 3 &amp; 4 \\
+F &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 2 &amp; 1 &amp; 1 &amp; 1 &amp; 2
+\end{array}
+$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>每个样本点的概率均为 $1/10$。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 41 页</span></footer>
 </section>
-<section class="slide" id="ch3-042" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-042" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 2 · 联合分布与边缘分布</h2>
-<div class="slide-content "><div class="table-wrap"><table><thead><tr><th>$F\backslash D$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th><th>$P\{F=j\}$</th></tr></thead><tbody><tr><td>$0$</td><td>$\frac1{10}$</td><td>$0$</td><td>$0$</td><td>$0$</td><td>$\frac1{10}$</td></tr><tr><td>$1$</td><td>$0$</td><td>$\frac4{10}$</td><td>$\frac2{10}$</td><td>$\frac1{10}$</td><td>$\frac7{10}$</td></tr><tr><td>$2$</td><td>$0$</td><td>$0$</td><td>$0$</td><td>$\frac2{10}$</td><td>$\frac2{10}$</td></tr><tr class="total"><td>$P\{D=i\}$</td><td>$\frac1{10}$</td><td>$\frac4{10}$</td><td>$\frac2{10}$</td><td>$\frac3{10}$</td><td>$1$</td></tr></tbody></table></div>
+<div class="slide-content "><p>$$
+\def\arraystretch{1.4}
+\begin{array}{c|cccc|c}
+F\backslash D &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; P\{F=j\} \\
+\hline
+0 &amp; \dfrac1{10} &amp; 0 &amp; 0 &amp; 0 &amp; \dfrac1{10} \\[0.65em]
+1 &amp; 0 &amp; \dfrac4{10} &amp; \dfrac2{10} &amp; \dfrac1{10} &amp; \dfrac7{10} \\[0.65em]
+2 &amp; 0 &amp; 0 &amp; 0 &amp; \dfrac2{10} &amp; \dfrac2{10} \\[0.65em]
+\hline
+P\{D=i\} &amp; \dfrac1{10} &amp; \dfrac4{10} &amp; \dfrac2{10} &amp; \dfrac3{10} &amp; 1
+\end{array}
+$$</p>
 <div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>底行是 $D$ 的边缘分布律，右列是 $F$ 的边缘分布律。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 42 页</span></footer>
 </section>
-<section class="slide" id="ch3-043" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-043" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>连续型随机变量的边缘密度 · X</h2>
 <div class="slide-content "><p>设 $(X,Y)$ 的联合概率密度为 $f(x,y)$，则</p>
-
 <div class="fragment"><p>$$F_X(x)=F(x,+\infty)=\int_{-\infty}^{x}\left[\int_{-\infty}^{+\infty}f(u,y)\,\mathrm dy\right]\mathrm du$$</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">关于 X 的边缘概率密度</div><p>$$f_X(x)=\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dy$$</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">关于 X 的边缘概率密度</div><p>$$f_X(x)=\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dy$$</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 43 页</span></footer>
 </section>
-<section class="slide" id="ch3-044" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-044" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>连续型随机变量的边缘密度 · Y</h2>
 <div class="slide-content "><p>$$F_Y(y)=F(+\infty,y)=\int_{-\infty}^{y}\left[\int_{-\infty}^{+\infty}f(x,v)\,\mathrm dx\right]\mathrm dv$$</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">关于 Y 的边缘概率密度</div><p>$$f_Y(y)=\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dx$$</p>
-</div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>对另一个变量在整个取值范围内积分。</p>
+</div></div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>对另一个变量在整个取值范围内积分。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 44 页</span></footer>
 </section>
-<section class="slide" id="ch3-045" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-045" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · 曲线之间的联合密度</h2>
 <div class="slide-content "><p>$$f(x,y)=\begin{cases}6,&amp;x^2\le y\le x,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
-
-<div class="fragment"><p>求边缘密度 $f_X(x)$、$f_Y(y)$。</p><div class="diagram" data-diagram="parabola"></div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">解 · 固定 x</div><p>$$f_X(x)=\int_{x^2}^{x}6\,\mathrm dy=6(x-x^2),\quad0\le x\le1$$</p>
+<div class="fragment"><p>求边缘密度 $f_X(x)$、$f_Y(y)$。</p><div class="diagram" data-diagram="parabola"></div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">解 · 固定 x</div><p>$$f_X(x)=\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dy=\int_{x^2}^{x}6\,\mathrm dy=6(x-x^2),\quad0\le x\le1$$</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 45 页</span></footer>
 </section>
-<section class="slide" id="ch3-046" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-046" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · X 的边缘密度</h2>
 <div class="slide-content "><p>当 $x&lt;0$ 或 $x&gt;1$ 时，积分截面为空，$f_X(x)=0$。</p>
-
 <div class="fragment"><p>$$f_X(x)=\begin{cases}6(x-x^2),&amp;0\le x\le1,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
-</div>
-<div class="fragment"><p><svg role="img" aria-label="parabola 示意图" xmlns="http://www.w3.org/2000/svg" class="diagram" data-name="parabola" viewBox="0 0 520 240"><path d="M120 195L400 30Q265 196 120 195" fill="#d9ede9"/><path d="M120 195L400 30M120 195Q265 196 400 30" stroke="#007a78" stroke-width="3" fill="none"/><path d="M400 30V195" stroke="#b28330" stroke-dasharray="5 5"/><path d="M70 195H475M120 220V20" stroke="#1c3a47" stroke-width="2.5" fill="none"/><path d="M475 195l-10 -5v10zM120 20l-5 10h10z" fill="#1c3a47"/><text x="475" y="221">x</text><text x="97" y="24">y</text><text x="98" y="218">O</text><text x="292" y="56">y = x</text><text x="324" y="155">y = x²</text><text x="405" y="26">(1, 1)</text></svg></p>
+</div><div class="fragment"><p><svg role="img" aria-label="parabola 示意图" xmlns="http://www.w3.org/2000/svg" class="diagram" data-name="parabola" viewBox="0 0 520 240"><path d="M120 195L400 30Q265 196 120 195" fill="#d9ede9"/><path d="M120 195L400 30M120 195Q265 196 400 30" stroke="#007a78" stroke-width="3" fill="none"/><path d="M400 30V195" stroke="#b28330" stroke-dasharray="5 5"/><path d="M70 195H475M120 220V20" stroke="#1c3a47" stroke-width="2.5" fill="none"/><path d="M475 195l-10 -5v10zM120 20l-5 10h10z" fill="#1c3a47"/><text x="475" y="221">x</text><text x="97" y="24">y</text><text x="98" y="218">O</text><text x="292" y="56">y = x</text><text x="324" y="155">y = x²</text><text x="405" y="26">(1, 1)</text></svg></p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 46 页</span></footer>
 </section>
-<section class="slide" id="ch3-047" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-047" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · Y 的边缘密度</h2>
 <div class="slide-content "><p>固定 $0\le y\le1$，积分区间为 $y\le x\le\sqrt y$。</p>
-
 <div class="fragment"><p>$$f_Y(y)=\int_y^{\sqrt y}6\,\mathrm dx=6(\sqrt y-y)$$</p>
-</div>
-<div class="fragment"><p>$$f_Y(y)=\begin{cases}6(\sqrt y-y),&amp;0\le y\le1,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>积分限应由支持区域确定，而不是直接沿用另一变量的积分限。</p>
+</div><div class="fragment"><p>$$f_Y(y)=\begin{cases}6(\sqrt y-y),&amp;0\le y\le1,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>积分限应由支持区域确定，而不是直接沿用另一变量的积分限。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 47 页</span></footer>
 </section>
-<section class="slide" id="ch3-048" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-048" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 4 · 二维正态分布</h2>
 <div class="slide-content "><p>设 $(X,Y)$ 的联合概率密度为</p>
-
 <div class="fragment"><p>$$\begin{aligned}f(x,y)&amp;=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\\&amp;\quad\cdot\exp\!\left\{-\frac{1}{2(1-\rho^2)}\left[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho\frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}\right]\right\}.\end{aligned}$$</p>
-</div>
-<div class="fragment"><p>其中 $x,y\in\mathbb R$，$\mu_1,\mu_2,\sigma_1,\sigma_2,\rho$ 为常数，且 $\sigma_1&gt;0$、$\sigma_2&gt;0$、$-1&lt;\rho&lt;1$。</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>求两个边缘概率密度。</p>
+</div><div class="fragment"><p>其中 $x,y\in\mathbb R$，$\mu_1,\mu_2,\sigma_1,\sigma_2,\rho$ 为常数，且 $\sigma_1&gt;0$、$\sigma_2&gt;0$、$-1&lt;\rho&lt;1$。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>求两个边缘概率密度。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 48 页</span></footer>
 </section>
-<section class="slide" id="ch3-049" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-049" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 4 · 配方求边缘密度</h2>
 <div class="slide-content "><p>$$f_X(x)=\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dy$$</p>
-
 <div class="fragment"><p>$$\begin{aligned}&amp;\frac{(y-\mu_2)^2}{\sigma_2^2}-2\rho\frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}\\&amp;=\left[\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1}\right]^2-\rho^2\frac{(x-\mu_1)^2}{\sigma_1^2}.\end{aligned}$$</p>
-</div>
-<div class="fragment"><p>$$f_X(x)=\frac{e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\int_{-\infty}^{+\infty}\exp\!\left\{-\frac{\left[\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1}\right]^2}{2(1-\rho^2)}\right\}\mathrm dy$$</p>
+</div><div class="fragment"><p>$$f_X(x)=\frac{e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\int_{-\infty}^{+\infty}\exp\!\left\{-\frac{\left[\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1}\right]^2}{2(1-\rho^2)}\right\}\mathrm dy$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 49 页</span></footer>
 </section>
-<section class="slide" id="ch3-050" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-050" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 4 · 换元积分</h2>
 <div class="slide-content "><p>$$t=\frac{1}{\sqrt{1-\rho^2}}\left(\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1}\right)$$</p>
-
 <div class="fragment"><p>$$\mathrm dy=\sigma_2\sqrt{1-\rho^2}\,\mathrm dt$$</p>
-</div>
-<div class="fragment"><p>$$f_X(x)=\frac1{2\pi\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty}e^{-t^2/2}\,\mathrm dt$$</p>
-</div>
-<div class="fragment"><p>$$\int_{-\infty}^{+\infty}e^{-t^2/2}\,\mathrm dt=\sqrt{2\pi}$$</p>
+</div><div class="fragment"><p>$$f_X(x)=\frac1{2\pi\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty}e^{-t^2/2}\,\mathrm dt$$</p>
+</div><div class="fragment"><p>$$\int_{-\infty}^{+\infty}e^{-t^2/2}\,\mathrm dt=\sqrt{2\pi}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 49（续） 页</span></footer>
 </section>
-<section class="slide" id="ch3-051" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-051" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>二维正态分布的边缘分布</h2>
 <div class="slide-content "><p>$$f_X(x)=\frac1{\sqrt{2\pi}\sigma_1}\exp\!\left[-\frac{(x-\mu_1)^2}{2\sigma_1^2}\right],\quad x\in\mathbb R$$</p>
-
 <div class="fragment"><p>$$f_Y(y)=\frac1{\sqrt{2\pi}\sigma_2}\exp\!\left[-\frac{(y-\mu_2)^2}{2\sigma_2^2}\right],\quad y\in\mathbb R$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>两个边缘分布都是一维正态分布，并且均不依赖于参数 $\rho$。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>两个边缘分布都是一维正态分布，并且均不依赖于参数 $\rho$。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 50 页</span></footer>
 </section>
-<section class="slide" id="ch3-052" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-052" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>补充 · 误差函数</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">定义</div><p>$$\operatorname{erf}(x)=\frac2{\sqrt\pi}\int_0^x e^{-t^2}\,\mathrm dt$$<p>描述从 $0$ 到 $x$ 的高斯曲线下的面积比例。</p></p>
-</div>
-<div class="fragment"><p>$$\operatorname{erf}(-x)=-\operatorname{erf}(x),\quad\operatorname{erf}(0)=0,\quad\operatorname{erf}(\pm\infty)=\pm1$$</p>
-</div>
-<div class="fragment"><p>$$\frac{\mathrm d}{\mathrm dx}\operatorname{erf}(x)=\frac2{\sqrt\pi}e^{-x^2}$$</p>
-</div>
-<div class="fragment"><p>$$\operatorname{erf}(1)\approx0.8427,\qquad\operatorname{erf}(2)\approx0.9953$$</p>
+</div><div class="fragment"><p>$$\operatorname{erf}(-x)=-\operatorname{erf}(x),\quad\operatorname{erf}(0)=0,\quad\operatorname{erf}(\pm\infty)=\pm1$$</p>
+</div><div class="fragment"><p>$$\frac{\mathrm d}{\mathrm dx}\operatorname{erf}(x)=\frac2{\sqrt\pi}e^{-x^2}$$</p>
+</div><div class="fragment"><p>$$\operatorname{erf}(1)\approx0.8427,\qquad\operatorname{erf}(2)\approx0.9953$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 51 页</span></footer>
 </section>
-<section class="slide" id="ch3-053" data-type="question" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-053" data-type="question" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>思考 · 边缘正态，联合也正态吗？</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">请同学们思考</div><p>边缘分布均为正态分布的随机变量，其联合分布一定是二维正态分布吗？</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p><strong>不一定。</strong></p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p><strong>不一定。</strong></p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 52 页</span></footer>
 </section>
-<section class="slide" id="ch3-054" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-054" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>反例 · 两个正态边缘</h2>
 <div class="slide-content "><p>$$f(x,y)=\frac1{2\pi}e^{-(x^2+y^2)/2}(1+\sin x\sin y),\quad x,y\in\mathbb R$$</p>
-
 <div class="fragment"><p>这是一个非负、归一化的联合密度，但不是二维正态密度。</p>
-</div>
-<div class="fragment"><p>$$f_X(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\qquad f_Y(y)=\frac1{\sqrt{2\pi}}e^{-y^2/2}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>两个边缘均为标准正态分布，却不能推出联合分布为二维正态分布。</p>
+</div><div class="fragment"><p>$$f_X(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\qquad f_Y(y)=\frac1{\sqrt{2\pi}}e^{-y^2/2}$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>两个边缘均为标准正态分布，却不能推出联合分布为二维正态分布。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 53 页</span></footer>
 </section>
-<section class="slide" id="ch3-055" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-055" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>反例的推导 · X 的边缘密度</h2>
 <div class="slide-content "><p>$$\begin{aligned}f_X(x)&amp;=\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dy\\&amp;=\frac1{2\pi}e^{-x^2/2}\left[\int_{-\infty}^{+\infty}e^{-y^2/2}\,\mathrm dy+\sin x\int_{-\infty}^{+\infty}e^{-y^2/2}\sin y\,\mathrm dy\right].\end{aligned}$$</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">两个积分</div><p>$$\int_{-\infty}^{+\infty}e^{-y^2/2}\,\mathrm dy=\sqrt{2\pi},\qquad\int_{-\infty}^{+\infty}e^{-y^2/2}\sin y\,\mathrm dy=0$$<p>后一个被积函数是奇函数。</p></p>
-</div></div>
-<div class="fragment"><p>$$f_X(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2}$$</p>
+</div></div><div class="fragment"><p>$$f_X(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 54 页</span></footer>
 </section>
-<section class="slide" id="ch3-056" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-056" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>反例的推导 · Y 的边缘密度</h2>
 <div class="slide-content "><p>$$\begin{aligned}f_Y(y)&amp;=\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dx\\&amp;=\frac1{2\pi}e^{-y^2/2}\left[\sqrt{2\pi}+\sin y\int_{-\infty}^{+\infty}e^{-x^2/2}\sin x\,\mathrm dx\right]\\&amp;=\frac1{\sqrt{2\pi}}e^{-y^2/2}.\end{aligned}$$</p>
-
 <div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>由于存在附加因子 $1+\sin x\sin y$，联合密度不是二维正态密度；但 $X\sim N(0,1)$、$Y\sim N(0,1)$。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 54（续） 页</span></footer>
 </section>
-<section class="slide" id="ch3-057" data-type="normal" data-chapter="3" data-source="content/chap03/02-marginal-distributions.md">
+<section class="slide" id="ch3-057" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/02-marginal-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>第二节小结</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">关于 X</div><p>$$F_X(x)=F(x,+\infty)=\int_{-\infty}^{x}f_X(u)\,\mathrm du,\qquad f_X(x)=\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dy$$</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">关于 Y</div><p>$$F_Y(y)=F(+\infty,y)=\int_{-\infty}^{y}f_Y(v)\,\mathrm dv,\qquad f_Y(y)=\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dx$$</p>
-</div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>联合分布确定边缘分布；边缘分布通常不能唯一确定联合分布。</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">关于 Y</div><p>$$F_Y(y)=F(+\infty,y)=\int_{-\infty}^{y}f_Y(v)\,\mathrm dv,\qquad f_Y(y)=\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dx$$</p>
+</div></div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>联合分布确定边缘分布；边缘分布通常不能唯一确定联合分布。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 55 页</span></footer>
 </section>
-<section class="slide" id="ch3-058" data-type="section" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-058" data-type="section" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>条件分布</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">01</div><p>离散型随机变量的条件分布</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">02</div><p>连续型随机变量的条件分布</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">03</div><p>小结</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">02</div><p>连续型随机变量的条件分布</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">03</div><p>小结</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 56 页</span></footer>
 </section>
-<section class="slide" id="ch3-059" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-059" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>条件分布的直观含义</h2>
 <div class="slide-content "><p>从一大群人中随机挑选一人，以 $X,Y$ 分别记此人的体重和身高。$X,Y$ 各有自己的分布。</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">增加限制</div><p>现在只考虑身高在 $1.5$ 米到 $1.6$ 米之间的人，求在这个限制下体重 $X$ 的分布。</p>
-</div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>条件分布描述：给定一个随机变量的信息后，另一个随机变量如何分布。</p>
+</div></div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>条件分布描述：给定一个随机变量的信息后，另一个随机变量如何分布。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 57 页</span></footer>
 </section>
-<section class="slide" id="ch3-060" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-060" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>离散型条件分布 · 给定 Y</h2>
 <div class="slide-content "><p>设 $(X,Y)$ 是二维离散型随机变量。对于固定的 $j$，若 $P\{Y=y_j\}=p_{\cdot j}&gt;0$，则</p>
-
 <div class="fragment"><p>$$P\{X=x_i\mid Y=y_j\}=\frac{P\{X=x_i,Y=y_j\}}{P\{Y=y_j\}}=\frac{p_{ij}}{p_{\cdot j}}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>称为在 $Y=y_j$ 条件下，随机变量 $X$ 的条件分布律。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>称为在 $Y=y_j$ 条件下，随机变量 $X$ 的条件分布律。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 58 页</span></footer>
 </section>
-<section class="slide" id="ch3-061" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-061" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>离散型条件分布 · 给定 X</h2>
 <div class="slide-content "><p>对于固定的 $i$，若 $P\{X=x_i\}=p_{i\cdot}&gt;0$，则</p>
-
 <div class="fragment"><p>$$P\{Y=y_j\mid X=x_i\}=\frac{P\{X=x_i,Y=y_j\}}{P\{X=x_i\}}=\frac{p_{ij}}{p_{i\cdot}}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>称为在 $X=x_i$ 条件下，随机变量 $Y$ 的条件分布律。$i,j=1,2,\ldots$。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>称为在 $X=x_i$ 条件下，随机变量 $Y$ 的条件分布律。$i,j=1,2,\ldots$。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 58（续） 页</span></footer>
 </section>
-<section class="slide" id="ch3-062" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-062" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 1 · 汽车制造中的缺陷</h2>
 <div class="slide-content "><p>机器人完成两道工序：紧固 $3$ 只螺栓、焊接 $2$ 处焊点。$X$ 为紧固不良的螺栓数，$Y$ 为焊接不良的焊点数。累积资料给出以下联合分布律：</p>
-
-<div class="fragment"><div class="table-wrap"><table><thead><tr><th>$Y\backslash X$</th><th>$0$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$P\{Y=j\}$</th></tr></thead><tbody><tr><td>$0$</td><td>$0.840$</td><td>$0.030$</td><td>$0.020$</td><td>$0.010$</td><td>$0.900$</td></tr><tr><td>$1$</td><td>$0.060$</td><td>$0.010$</td><td>$0.008$</td><td>$0.002$</td><td>$0.080$</td></tr><tr><td>$2$</td><td>$0.010$</td><td>$0.005$</td><td>$0.004$</td><td>$0.001$</td><td>$0.020$</td></tr><tr class="total"><td>$P\{X=i\}$</td><td>$0.910$</td><td>$0.045$</td><td>$0.032$</td><td>$0.013$</td><td>$1.000$</td></tr></tbody></table></div></div></div>
+<div class="fragment"><p>$$
+\begin{array}{c|cccc|c}
+Y\backslash X &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; P\{Y=j\} \\
+\hline
+0 &amp; 0.840 &amp; 0.030 &amp; 0.020 &amp; 0.010 &amp; 0.900 \\
+1 &amp; 0.060 &amp; 0.010 &amp; 0.008 &amp; 0.002 &amp; 0.080 \\
+2 &amp; 0.010 &amp; 0.005 &amp; 0.004 &amp; 0.001 &amp; 0.020 \\
+\hline
+P\{X=i\} &amp; 0.910 &amp; 0.045 &amp; 0.032 &amp; 0.013 &amp; 1.000
+\end{array}
+$$</p>
+</div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 59 页</span></footer>
 </section>
-<section class="slide" id="ch3-063" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-063" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 1 · 计算条件概率</h2>
 <div class="slide-content "><p>（1）求 $X=1$ 条件下 $Y$ 的分布律；（2）求 $Y=0$ 条件下 $X$ 的分布律。</p>
-
 <div class="fragment"><p>$$P\{Y=0\mid X=1\}=\frac{P\{X=1,Y=0\}}{P\{X=1\}}=\frac{0.030}{0.045}=\frac69$$</p>
-</div>
-<div class="fragment"><p>$$P\{Y=1\mid X=1\}=\frac{0.010}{0.045}=\frac29$$</p>
-</div>
-<div class="fragment"><p>$$P\{Y=2\mid X=1\}=\frac{0.005}{0.045}=\frac19$$</p>
+</div><div class="fragment"><p>$$P\{Y=1\mid X=1\}=\frac{0.010}{0.045}=\frac29$$</p>
+</div><div class="fragment"><p>$$P\{Y=2\mid X=1\}=\frac{0.005}{0.045}=\frac19$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 60 页</span></footer>
 </section>
-<section class="slide" id="ch3-064" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-064" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 1 · 两个条件分布律</h2>
-<div class="slide-content "><div class="component component-card card"><div class="component-label label">给定 X = 1</div><div class="table-wrap"><table><thead><tr><th>$Y$</th><th>$0$</th><th>$1$</th><th>$2$</th></tr></thead><tbody><tr><td>$P\{Y=k\mid X=1\}$</td><td>$\frac69$</td><td>$\frac29$</td><td>$\frac19$</td></tr></tbody></table></div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">给定 Y = 0</div><div class="table-wrap"><table><thead><tr><th>$X$</th><th>$0$</th><th>$1$</th><th>$2$</th><th>$3$</th></tr></thead><tbody><tr><td>$P\{X=k\mid Y=0\}$</td><td>$\frac{84}{90}$</td><td>$\frac3{90}$</td><td>$\frac2{90}$</td><td>$\frac1{90}$</td></tr></tbody></table></div></div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>条件分布律的所有概率之和仍等于 $1$。</p>
+<div class="slide-content "><div class="component component-card card"><div class="component-label label">给定 X = 1</div><p>$$
+\def\arraystretch{1.4}
+\begin{array}{c|ccc}
+Y &amp; 0 &amp; 1 &amp; 2 \\
+\hline
+P\{Y=k\mid X=1\} &amp; \dfrac69 &amp; \dfrac29 &amp; \dfrac19
+\end{array}
+$$</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">给定 Y = 0</div><p>$$
+\def\arraystretch{1.4}
+\begin{array}{c|cccc}
+X &amp; 0 &amp; 1 &amp; 2 &amp; 3 \\
+\hline
+P\{X=k\mid Y=0\} &amp; \dfrac{84}{90} &amp; \dfrac3{90} &amp; \dfrac2{90} &amp; \dfrac1{90}
+\end{array}
+$$</p>
+</div></div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>条件分布律的所有概率之和仍等于 $1$。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 61 页</span></footer>
 </section>
-<section class="slide" id="ch3-065" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-065" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 2 · 射击直到命中两次</h2>
 <div class="slide-content "><p>射手每次射击击中目标的概率为 $p$，$0&lt;p&lt;1$，各次射击独立；射击到击中目标两次为止。</p><p>$X$ 表示首次命中所需的射击次数，$Y$ 表示总射击次数。求联合分布律与条件分布律。</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">解 · 两次命中，其余未中</div><p>$$P\{X=m,Y=n\}=p^2q^{n-2}$$</p>
-</div></div>
-<div class="fragment"><p>$$q=1-p,\qquad n=2,3,\ldots,\quad m=1,2,\ldots,n-1$$</p>
+</div></div><div class="fragment"><p>$$q=1-p,\qquad n=2,3,\ldots,\quad m=1,2,\ldots,n-1$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 62 页</span></footer>
 </section>
-<section class="slide" id="ch3-066" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-066" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 2 · 先求边缘分布律</h2>
 <div class="slide-content "><p>$$\begin{aligned}P\{X=m\}&amp;=\sum_{n=m+1}^{\infty}P\{X=m,Y=n\}\\&amp;=p^2\sum_{n=m+1}^{\infty}q^{n-2}=\frac{p^2q^{m-1}}{1-q}=pq^{m-1},\quad m=1,2,\ldots\end{aligned}$$</p>
-
 <div class="fragment"><p>$$\begin{aligned}P\{Y=n\}&amp;=\sum_{m=1}^{n-1}P\{X=m,Y=n\}\\&amp;=(n-1)p^2q^{n-2},\quad n=2,3,\ldots\end{aligned}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 63 页</span></footer>
 </section>
-<section class="slide" id="ch3-067" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-067" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 2 · 两个条件分布律</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">给定总次数 Y = n</div><p>$$P\{X=m\mid Y=n\}=\frac{p^2q^{n-2}}{(n-1)p^2q^{n-2}}=\frac1{n-1},\quad m=1,\ldots,n-1$$</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">给定首次命中次数 X = m</div><p>$$P\{Y=n\mid X=m\}=\frac{p^2q^{n-2}}{pq^{m-1}}=pq^{n-m-1},\quad n=m+1,m+2,\ldots$$</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">给定首次命中次数 X = m</div><p>$$P\{Y=n\mid X=m\}=\frac{p^2q^{n-2}}{pq^{m-1}}=pq^{n-m-1},\quad n=m+1,m+2,\ldots$$</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 64 页</span></footer>
 </section>
-<section class="slide" id="ch3-068" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-068" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>连续型条件概率密度</h2>
 <div class="slide-content "><p>设联合概率密度为 $f(x,y)$，关于 $Y$ 的边缘密度为 $f_Y(y)$。对固定的 $y$，若 $f_Y(y)&gt;0$，则</p>
-
 <div class="fragment"><p>$$f_{X\mid Y}(x\mid y)=\frac{f(x,y)}{f_Y(y)}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>称为在 $Y=y$ 条件下，$X$ 的条件概率密度。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>称为在 $Y=y$ 条件下，$X$ 的条件概率密度。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 65 页</span></footer>
 </section>
-<section class="slide" id="ch3-069" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-069" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>连续型条件分布函数</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">给定 Y = y</div><p>$$F_{X\mid Y}(x\mid y)=\int_{-\infty}^{x}f_{X\mid Y}(u\mid y)\,\mathrm du=\int_{-\infty}^{x}\frac{f(u,y)}{f_Y(y)}\,\mathrm du$$</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">给定 X = x</div><p>$$f_{Y\mid X}(y\mid x)=\frac{f(x,y)}{f_X(x)},\quad f_X(x)&gt;0$$</p>
-</div></div>
-<div class="fragment"><p>$$F_{Y\mid X}(y\mid x)=\int_{-\infty}^{y}\frac{f(x,v)}{f_X(x)}\,\mathrm dv$$</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">给定 X = x</div><p>$$f_{Y\mid X}(y\mid x)=\frac{f(x,y)}{f_X(x)},\quad f_X(x)&gt;0$$</p>
+</div></div><div class="fragment"><p>$$F_{Y\mid X}(y\mid x)=\int_{-\infty}^{y}\frac{f(x,v)}{f_X(x)}\,\mathrm dv$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 66 页</span></footer>
 </section>
-<section class="slide" id="ch3-070" data-type="question" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-070" data-type="question" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>思考 · 为什么不能直接套条件概率？</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">问题</div><p>为什么不能直接用条件概率公式定义连续型的 $F_{X\mid Y}(x\mid y)$？</p>
-</div>
-<div class="fragment"><p>条件分布是在一个随机变量取某个确定值的条件下，另一个随机变量的分布，通常记作 $P\{X\le x\mid Y=y\}$。</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>连续型随机变量满足 $P\{Y=y\}=0$。直接套用事件条件概率的比值公式会出现分母为零，因此需由条件密度等方式定义。</p>
+</div><div class="fragment"><p>条件分布是在一个随机变量取某个确定值的条件下，另一个随机变量的分布，通常记作 $P\{X\le x\mid Y=y\}$。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>连续型随机变量满足 $P\{Y=y\}=0$。直接套用事件条件概率的比值公式会出现分母为零，因此需由条件密度等方式定义。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 67 页</span></footer>
 </section>
-<section class="slide" id="ch3-071" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-071" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>联合、边缘与条件分布的关系</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">密度积分得到条件分布函数</div><p>$$\begin{aligned}F_{X\mid Y}(x\mid y)&amp;=\int_{-\infty}^{x}f_{X\mid Y}(u\mid y)\,\mathrm du,\\F_{Y\mid X}(y\mid x)&amp;=\int_{-\infty}^{y}f_{Y\mid X}(v\mid x)\,\mathrm dv.\end{aligned}$$</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">边缘密度 × 条件密度 = 联合密度</div><p>$$f(x,y)=f_{X\mid Y}(x\mid y)f_Y(y)=f_{Y\mid X}(y\mid x)f_X(x)$$</p>
-</div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>联合分布确定边缘分布和条件分布；边缘分布与相应条件分布一起可确定联合分布。</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">边缘密度 × 条件密度 = 联合密度</div><p>$$f(x,y)=f_{X\mid Y}(x\mid y)f_Y(y)=f_{Y\mid X}(y\mid x)f_X(x)$$</p>
+</div></div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>联合分布确定边缘分布和条件分布；边缘分布与相应条件分布一起可确定联合分布。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 68 页</span></footer>
 </section>
-<section class="slide" id="ch3-072" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-072" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · 平面区域上的均匀分布</h2>
 <div class="slide-content "><p>设 $G$ 为平面上的有界区域，其面积为 $A&gt;0$。若二维随机变量 $(X,Y)$ 的密度为</p>
-
 <div class="fragment"><p>$$f(x,y)=\begin{cases}\frac1A,&amp;(x,y)\in G,\\0,&amp;\text{otherwise},\end{cases}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>则称 $(X,Y)$ 在区域 $G$ 上服从均匀分布。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>则称 $(X,Y)$ 在区域 $G$ 上服从均匀分布。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 69 页</span></footer>
 </section>
-<section class="slide" id="ch3-073" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-073" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · 单位圆域上的条件密度</h2>
-<div class="slide-content "><p>设 $(X,Y)$ 在圆域 $x^2+y^2\le1$ 上服从均匀分布，求 $f_{X\mid Y}(x\mid y)$。</p><div class="diagram" data-diagram="circle"></div>
-<div class="fragment"><p>$$f(x,y)=\begin{cases}\frac1\pi,&amp;x^2+y^2\le1,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
+<div class="slide-content "><p>设 $(X,Y)$ 在圆域 $x^2+y^2\le1$ 上服从均匀分布，求 $f_{X\mid Y}(x\mid y)$。</p><div class="diagram" data-diagram="circle"></div><div class="fragment"><p>$$f(x,y)=\begin{cases}\frac1\pi,&amp;x^2+y^2\le1,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 69（续） 页</span></footer>
 </section>
-<section class="slide" id="ch3-074" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-074" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · 从圆的截面得到条件密度</h2>
 <div class="slide-content "><p>$$f_Y(y)=\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}\frac1\pi\,\mathrm dx=\frac2\pi\sqrt{1-y^2},\quad-1\le y\le1$$</p>
-
 <div class="fragment"><p>其余位置 $f_Y(y)=0$。当 $-1&lt;y&lt;1$ 时：</p>
-</div>
-<div class="fragment"><p>$$f_{X\mid Y}(x\mid y)=\begin{cases}\frac1{2\sqrt{1-y^2}},&amp;-\sqrt{1-y^2}\le x\le\sqrt{1-y^2},\\0,&amp;\text{otherwise}.\end{cases}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>给定 $y$ 后，$X$ 在对应的水平弦上均匀分布。</p>
+</div><div class="fragment"><p>$$f_{X\mid Y}(x\mid y)=\begin{cases}\frac1{2\sqrt{1-y^2}},&amp;-\sqrt{1-y^2}\le x\le\sqrt{1-y^2},\\0,&amp;\text{otherwise}.\end{cases}$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>给定 $y$ 后，$X$ 在对应的水平弦上均匀分布。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 70 页</span></footer>
 </section>
-<section class="slide" id="ch3-075" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-075" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 4 · 条件均匀分布</h2>
 <div class="slide-content "><p>$X$ 在 $(0,1)$ 上均匀取值。当观察到 $X=x$ 时，$Y$ 在 $(x,1)$ 上均匀取值。求 $Y$ 的概率密度。</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">X 的密度</div><p>$$f_X(x)=\begin{cases}1,&amp;0&lt;x&lt;1,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">Y 的条件密度</div><p>$$f_{Y\mid X}(y\mid x)=\begin{cases}\frac1{1-x},&amp;x&lt;y&lt;1,\\0,&amp;\text{otherwise},\end{cases}\quad0&lt;x&lt;1$$</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">Y 的条件密度</div><p>$$f_{Y\mid X}(y\mid x)=\begin{cases}\frac1{1-x},&amp;x&lt;y&lt;1,\\0,&amp;\text{otherwise},\end{cases}\quad0&lt;x&lt;1$$</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 71 页</span></footer>
 </section>
-<section class="slide" id="ch3-076" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-076" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 4 · 先联合，再边缘</h2>
 <div class="slide-content "><p>$$f(x,y)=f_{Y\mid X}(y\mid x)f_X(x)=\begin{cases}\frac1{1-x},&amp;0&lt;x&lt;y&lt;1,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
-
 <div class="fragment"><p>$$f_Y(y)=\int_0^y\frac1{1-x}\,\mathrm dx=-\ln(1-y),\quad0&lt;y&lt;1$$</p>
-</div>
-<div class="fragment"><p>$$f_Y(y)=\begin{cases}-\ln(1-y),&amp;0&lt;y&lt;1,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
+</div><div class="fragment"><p>$$f_Y(y)=\begin{cases}-\ln(1-y),&amp;0&lt;y&lt;1,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 72 页</span></footer>
 </section>
-<section class="slide" id="ch3-077" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-077" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>第三节小结 · 离散型</h2>
 <div class="slide-content "><p>设联合分布律为 $p_{ij}$，相应边缘概率为正。</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">给定 Y</div><p>$$P\{X=x_i\mid Y=y_j\}=\frac{P\{X=x_i,Y=y_j\}}{P\{Y=y_j\}}=\frac{p_{ij}}{p_{\cdot j}}$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">给定 X</div><p>$$P\{Y=y_j\mid X=x_i\}=\frac{P\{X=x_i,Y=y_j\}}{P\{X=x_i\}}=\frac{p_{ij}}{p_{i\cdot}}$$</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">给定 X</div><p>$$P\{Y=y_j\mid X=x_i\}=\frac{P\{X=x_i,Y=y_j\}}{P\{X=x_i\}}=\frac{p_{ij}}{p_{i\cdot}}$$</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 73 页</span></footer>
 </section>
-<section class="slide" id="ch3-078" data-type="normal" data-chapter="3" data-source="content/chap03/03-conditional-distributions.md">
+<section class="slide" id="ch3-078" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/03-conditional-distributions.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>第三节小结 · 连续型</h2>
 <div class="slide-content "><p>在相应边缘密度大于零的条件下：</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">给定 Y</div><p>$$F_{X\mid Y}(x\mid y)=\int_{-\infty}^{x}f_{X\mid Y}(u\mid y)\,\mathrm du=\int_{-\infty}^{x}\frac{f(u,y)}{f_Y(y)}\,\mathrm du$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">给定 X</div><p>$$F_{Y\mid X}(y\mid x)=\int_{-\infty}^{y}f_{Y\mid X}(v\mid x)\,\mathrm dv=\int_{-\infty}^{y}\frac{f(x,v)}{f_X(x)}\,\mathrm dv$$</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">给定 X</div><p>$$F_{Y\mid X}(y\mid x)=\int_{-\infty}^{y}f_{Y\mid X}(v\mid x)\,\mathrm dv=\int_{-\infty}^{y}\frac{f(x,v)}{f_X(x)}\,\mathrm dv$$</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 74 页</span></footer>
 </section>
-<section class="slide" id="ch3-079" data-type="section" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-079" data-type="section" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>相互独立的随机变量</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">01</div><p>随机变量的相互独立性</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">02</div><p>二维随机变量的推广</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">03</div><p>小结</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">02</div><p>二维随机变量的推广</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">03</div><p>小结</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 75 页</span></footer>
 </section>
-<section class="slide" id="ch3-080" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-080" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>相互独立性的定义</h2>
 <div class="slide-content "><p>设联合分布函数为 $F(x,y)$，两个边缘分布函数为 $F_X(x)$、$F_Y(y)$。若对所有 $x,y$ 都有</p>
-
 <div class="fragment"><p>$$P\{X\le x,Y\le y\}=P\{X\le x\}\,P\{Y\le y\}$$</p>
-</div>
-<div class="fragment"><p>$$F(x,y)=F_X(x)F_Y(y)$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>则称随机变量 $X$ 和 $Y$ <strong>相互独立</strong>。</p>
+</div><div class="fragment"><p>$$F(x,y)=F_X(x)F_Y(y)$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>则称随机变量 $X$ 和 $Y$ <strong>相互独立</strong>。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 76 页</span></footer>
 </section>
-<section class="slide" id="ch3-081" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-081" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>离散型随机变量的独立性判别</h2>
 <div class="slide-content "><p>设联合分布律为 $P\{X=x_i,Y=y_j\}=p_{ij}$，$i,j=1,2,\ldots$。</p>
-
 <div class="fragment"><p>$$X\perp Y\quad\Longleftrightarrow\quad P\{X=x_i,Y=y_j\}=P\{X=x_i\}P\{Y=y_j\}\quad\text{for all }i,j$$</p>
-</div>
-<div class="fragment"><p>$$p_{ij}=p_{i\cdot}\,p_{\cdot j}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>每个联合概率都等于相应的两个边缘概率之积。</p>
+</div><div class="fragment"><p>$$p_{ij}=p_{i\cdot}\,p_{\cdot j}$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>每个联合概率都等于相应的两个边缘概率之积。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 77 页</span></footer>
 </section>
-<section class="slide" id="ch3-082" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-082" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>连续型独立性与函数的独立性</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">连续型判别</div><p>$$X\perp Y\quad\Longleftrightarrow\quad f(x,y)=f_X(x)f_Y(y)\quad\text{a.e.}$$<p>密度等式按几乎处处的意义理解。</p></p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">独立变量的函数</div><p>若 $X$ 与 $Y$ 相互独立，则 $h(X)$ 与 $g(Y)$ 也相互独立（函数取值为随机变量时）。</p></div></div></div>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">独立变量的函数</div><p>若 $X$ 与 $Y$ 相互独立，则 $h(X)$ 与 $g(Y)$ 也相互独立（函数取值为随机变量时）。</p></div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 78 页</span></footer>
 </section>
-<section class="slide" id="ch3-083" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-083" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 1 · 分布律中的未知参数</h2>
 <div class="slide-content "><p>已知 $(X,Y)$ 的联合分布律：</p>
-
-<div class="fragment"><div class="table-wrap"><table><thead><tr><th>$(X,Y)$</th><th>$(1,1)$</th><th>$(1,2)$</th><th>$(1,3)$</th><th>$(2,1)$</th><th>$(2,2)$</th><th>$(2,3)$</th></tr></thead><tbody><tr><td>$p_{ij}$</td><td>$\frac16$</td><td>$\frac19$</td><td>$\frac1{18}$</td><td>$\frac13$</td><td>$\alpha$</td><td>$\beta$</td></tr></tbody></table></div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">问题</div><p>（1）求 $\alpha,\beta$ 应满足的条件。<br>（2）若 $X,Y$ 相互独立，求 $\alpha,\beta$ 的值。</p>
+<div class="fragment"><p>$$
+\def\arraystretch{1.4}
+\begin{array}{c|cccccc}
+(X,Y) &amp; (1,1) &amp; (1,2) &amp; (1,3) &amp; (2,1) &amp; (2,2) &amp; (2,3) \\
+\hline
+p_{ij} &amp; \dfrac16 &amp; \dfrac19 &amp; \dfrac1{18} &amp; \dfrac13 &amp; \alpha &amp; \beta
+\end{array}
+$$</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">问题</div><p>（1）求 $\alpha,\beta$ 应满足的条件。<br>（2）若 $X,Y$ 相互独立，求 $\alpha,\beta$ 的值。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 79 页</span></footer>
 </section>
-<section class="slide" id="ch3-084" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-084" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 1 · 非负性与归一化</h2>
-<div class="slide-content "><div class="table-wrap"><table><thead><tr><th>$X\backslash Y$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$p_{i\cdot}$</th></tr></thead><tbody><tr><td>$1$</td><td>$\frac16$</td><td>$\frac19$</td><td>$\frac1{18}$</td><td>$\frac13$</td></tr><tr><td>$2$</td><td>$\frac13$</td><td>$\alpha$</td><td>$\beta$</td><td>$\frac13+\alpha+\beta$</td></tr><tr class="total"><td>$p_{\cdot j}$</td><td>$\frac12$</td><td>$\frac19+\alpha$</td><td>$\frac1{18}+\beta$</td><td>$\frac23+\alpha+\beta$</td></tr></tbody></table></div>
+<div class="slide-content "><p>$$
+\def\arraystretch{1.4}
+\begin{array}{c|ccc|c}
+X\backslash Y &amp; 1 &amp; 2 &amp; 3 &amp; p_{i\cdot} \\
+\hline
+1 &amp; \dfrac16 &amp; \dfrac19 &amp; \dfrac1{18} &amp; \dfrac13 \\[0.65em]
+2 &amp; \dfrac13 &amp; \alpha &amp; \beta &amp; \dfrac13+\alpha+\beta \\[0.65em]
+\hline
+p_{\cdot j} &amp; \dfrac12 &amp; \dfrac19+\alpha &amp; \dfrac1{18}+\beta &amp; \dfrac23+\alpha+\beta
+\end{array}
+$$</p>
 <div class="fragment"><p>$$\alpha\ge0,\qquad\beta\ge0,\qquad\frac23+\alpha+\beta=1$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>因此 $\alpha\ge0$、$\beta\ge0$，且 $\alpha+\beta=1/3$。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>因此 $\alpha\ge0$、$\beta\ge0$，且 $\alpha+\beta=1/3$。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 80 页</span></footer>
 </section>
-<section class="slide" id="ch3-085" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-085" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 1 · 利用独立性求参数</h2>
 <div class="slide-content "><p>$$p_{ij}=p_{i\cdot}p_{\cdot j},\qquad i=1,2,\quad j=1,2,3$$</p>
-
 <div class="fragment"><p>$$p_{12}=p_{1\cdot}p_{\cdot2}\quad\Longrightarrow\quad\frac19=\frac13\left(\frac19+\alpha\right)\quad\Longrightarrow\quad\alpha=\frac29$$</p>
-</div>
-<div class="fragment"><p>$$\alpha+\beta=\frac13\quad\Longrightarrow\quad\beta=\frac19$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>代入后，各个表项均满足联合概率等于边缘概率之积。</p>
+</div><div class="fragment"><p>$$\alpha+\beta=\frac13\quad\Longrightarrow\quad\beta=\frac19$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>代入后，各个表项均满足联合概率等于边缘概率之积。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 81 页</span></footer>
 </section>
-<section class="slide" id="ch3-086" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-086" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 2 · 独立的正态与均匀变量</h2>
 <div class="slide-content "><p>设 $X,Y$ 相互独立，$X\sim N(a,\sigma^2)$，$Y$ 在 $[-b,b]$ 上服从均匀分布，其中 $\sigma&gt;0$、$b&gt;0$。求 $(X,Y)$ 的联合概率密度。</p>
-
 <div class="fragment"><p>$$f(x,y)=f_X(x)f_Y(y)$$</p>
-</div>
-<div class="fragment"><p>$$f_X(x)=\frac1{\sqrt{2\pi}\sigma}e^{-\frac{(x-a)^2}{2\sigma^2}},\quad x\in\mathbb R$$</p>
+</div><div class="fragment"><p>$$f_X(x)=\frac1{\sqrt{2\pi}\sigma}e^{-\frac{(x-a)^2}{2\sigma^2}},\quad x\in\mathbb R$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 82 页</span></footer>
 </section>
-<section class="slide" id="ch3-087" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-087" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 2 · 写出联合概率密度</h2>
 <div class="slide-content "><p>$$f_Y(y)=\begin{cases}\frac1{2b},&amp;-b\le y\le b,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
-
 <div class="fragment"><p>$$f(x,y)=\begin{cases}\frac1{2b\sqrt{2\pi}\sigma}e^{-\frac{(x-a)^2}{2\sigma^2}},&amp;x\in\mathbb R,\ -b\le y\le b,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>联合密度的支持区域是两个边缘支持区域的直积。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>联合密度的支持区域是两个边缘支持区域的直积。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 83 页</span></footer>
 </section>
-<section class="slide" id="ch3-088" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-088" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · 由独立边缘得到联合分布</h2>
 <div class="slide-content "><p>设两个独立随机变量 $X,Y$ 的分布律如下，求 $(X,Y)$ 的联合分布律。</p>
-
-<div class="fragment"><div class="columns"><div class="table-wrap"><table><thead><tr><th>$X$</th><th>$1$</th><th>$3$</th></tr></thead><tbody><tr><td>$P_X$</td><td>$0.3$</td><td>$0.7$</td></tr></tbody></table></div><div class="table-wrap"><table><thead><tr><th>$Y$</th><th>$2$</th><th>$4$</th></tr></thead><tbody><tr><td>$P_Y$</td><td>$0.6$</td><td>$0.4$</td></tr></tbody></table></div></div></div>
-<div class="fragment"><p>$$\begin{aligned}P\{X=1,Y=2\}&amp;=0.3\times0.6=0.18,\\P\{X=1,Y=4\}&amp;=0.3\times0.4=0.12.\end{aligned}$$</p>
+<div class="fragment"><div class="columns"><div class="column"><p>$$
+\begin{array}{c|cc}
+X &amp; 1 &amp; 3 \\
+\hline
+P_X &amp; 0.3 &amp; 0.7
+\end{array}
+$$</p>
+</div><div class="column"><p>$$
+\begin{array}{c|cc}
+Y &amp; 2 &amp; 4 \\
+\hline
+P_Y &amp; 0.6 &amp; 0.4
+\end{array}
+$$</p>
+</div></div></div><div class="fragment"><p>$$\begin{aligned}P\{X=1,Y=2\}&amp;=0.3\times0.6=0.18,\\P\{X=1,Y=4\}&amp;=0.3\times0.4=0.12.\end{aligned}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 84 页</span></footer>
 </section>
-<section class="slide" id="ch3-089" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-089" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 3 · 联合分布表</h2>
 <div class="slide-content "><p>$$\begin{aligned}P\{X=3,Y=2\}&amp;=0.7\times0.6=0.42,\\P\{X=3,Y=4\}&amp;=0.7\times0.4=0.28.\end{aligned}$$</p>
-
-<div class="fragment"><div class="table-wrap"><table><thead><tr><th>$X\backslash Y$</th><th>$2$</th><th>$4$</th></tr></thead><tbody><tr><td>$1$</td><td>$0.18$</td><td>$0.12$</td></tr><tr><td>$3$</td><td>$0.42$</td><td>$0.28$</td></tr></tbody></table></div></div></div>
+<div class="fragment"><p>$$
+\begin{array}{c|cc}
+X\backslash Y &amp; 2 &amp; 4 \\
+\hline
+1 &amp; 0.18 &amp; 0.12 \\
+3 &amp; 0.42 &amp; 0.28
+\end{array}
+$$</p>
+</div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 85 页</span></footer>
 </section>
-<section class="slide" id="ch3-090" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-090" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 4 · 到达时间相差不超过 5 分钟</h2>
 <div class="slide-content "><p>负责人到达办公室的时间均匀分布在 $8$—$12$ 时，秘书到达的时间均匀分布在 $7$—$9$ 时。假设两人的到达时间相互独立。</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">问题</div><p>求两人到达办公室的时间相差不超过 $5$ 分钟的概率。</p>
-</div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>以小时为单位，$5$ 分钟等于 $1/12$ 小时。</p>
+</div></div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>以小时为单位，$5$ 分钟等于 $1/12$ 小时。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 86 页</span></footer>
 </section>
-<section class="slide" id="ch3-091" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-091" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 4 · 先写出密度</h2>
 <div class="slide-content "><p>以 $X,Y$ 分别表示负责人和秘书到达的时刻。</p>
-
 <div class="fragment"><p>$$f_X(x)=\begin{cases}\frac14,&amp;8&lt;x&lt;12,\\0,&amp;\text{otherwise},\end{cases}\qquad f_Y(y)=\begin{cases}\frac12,&amp;7&lt;y&lt;9,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>由于 $X,Y$ 相互独立，联合密度等于两个边缘密度的乘积。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>由于 $X,Y$ 相互独立，联合密度等于两个边缘密度的乘积。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 86（续） 页</span></footer>
 </section>
-<section class="slide" id="ch3-092" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-092" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 4 · 转化为平面区域面积</h2>
 <div class="slide-content "><p>$$f(x,y)=f_X(x)f_Y(y)=\begin{cases}\frac18,&amp;8&lt;x&lt;12,\ 7&lt;y&lt;9,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
-
 <div class="fragment"><p>$$P\{|X-Y|\le1/12\}=\iint_Gf(x,y)\,\mathrm dx\,\mathrm dy=\frac18\operatorname{Area}(G)$$</p>
-</div>
-<div class="fragment"><p><svg role="img" aria-label="arrival 示意图" xmlns="http://www.w3.org/2000/svg" class="diagram" data-name="arrival" viewBox="0 0 520 240"><rect x="135" y="48" width="300" height="122" fill="#f4f8f9" stroke="#007a78" stroke-width="2"/><path d="M135 109L211 48H222L135 121Z" fill="#b7d9cf"/><path d="M135 109L211 48M135 121L222 48" stroke="#007a78" stroke-width="2"/><path d="M70 195H475M120 220V20" stroke="#1c3a47" stroke-width="2.5" fill="none"/><path d="M475 195l-10 -5v10zM120 20l-5 10h10z" fill="#1c3a47"/><text x="475" y="221">x</text><text x="97" y="24">y</text><text x="98" y="218">O</text><path d="M135 170V195M435 170V195" stroke="#9ab9be" stroke-dasharray="4 4"/><text x="130" y="218">8</text><text x="428" y="218">12</text><text x="97" y="55">9</text><text x="97" y="175">7</text><text x="160" y="95">G</text></svg></p>
+</div><div class="fragment"><p><svg role="img" aria-label="arrival 示意图" xmlns="http://www.w3.org/2000/svg" class="diagram" data-name="arrival" viewBox="0 0 520 240"><rect x="135" y="48" width="300" height="122" fill="#f4f8f9" stroke="#007a78" stroke-width="2"/><path d="M135 109L211 48H222L135 121Z" fill="#b7d9cf"/><path d="M135 109L211 48M135 121L222 48" stroke="#007a78" stroke-width="2"/><path d="M70 195H475M120 220V20" stroke="#1c3a47" stroke-width="2.5" fill="none"/><path d="M475 195l-10 -5v10zM120 20l-5 10h10z" fill="#1c3a47"/><text x="475" y="221">x</text><text x="97" y="24">y</text><text x="98" y="218">O</text><path d="M135 170V195M435 170V195" stroke="#9ab9be" stroke-dasharray="4 4"/><text x="130" y="218">8</text><text x="428" y="218">12</text><text x="97" y="55">9</text><text x="97" y="175">7</text><text x="160" y="95">G</text></svg></p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 87 页</span></footer>
 </section>
-<section class="slide" id="ch3-093" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-093" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>例 4 · 计算区域面积</h2>
 <div class="slide-content "><p>$$\operatorname{Area}(G)=\frac12\left(\frac{13}{12}\right)^2-\frac12\left(\frac{11}{12}\right)^2=\frac16$$</p>
-
 <div class="fragment"><p>$$P\{|X-Y|\le1/12\}=\frac18\times\frac16=\frac1{48}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>两人到达时间相差不超过 $5$ 分钟的概率为 $1/48$。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>两人到达时间相差不超过 $5$ 分钟的概率为 $1/48$。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 88 页</span></footer>
 </section>
-<section class="slide" id="ch3-094" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-094" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>n 维推广 · 联合分布函数</h2>
 <div class="slide-content "><p>$n$ 维随机变量 $(X_1,\ldots,X_n)$ 的分布函数为</p>
-
 <div class="fragment"><p>$$F(x_1,\ldots,x_n)=P\{X_1\le x_1,\ldots,X_n\le x_n\}$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>其中 $x_1,\ldots,x_n$ 为任意实数。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>其中 $x_1,\ldots,x_n$ 为任意实数。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 89 页</span></footer>
 </section>
-<section class="slide" id="ch3-095" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-095" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>n 维推广 · 联合概率密度</h2>
 <div class="slide-content "><p>若存在非负函数 $f(x_1,\ldots,x_n)$，使对任意实数 $x_1,\ldots,x_n$ 有</p>
-
 <div class="fragment"><p>$$F(x_1,\ldots,x_n)=\int_{-\infty}^{x_n}\cdots\int_{-\infty}^{x_1}f(u_1,\ldots,u_n)\,\mathrm du_1\cdots\mathrm du_n$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>则称 $f(x_1,\ldots,x_n)$ 为 $(X_1,\ldots,X_n)$ 的联合概率密度。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>则称 $f(x_1,\ldots,x_n)$ 为 $(X_1,\ldots,X_n)$ 的联合概率密度。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 90 页</span></footer>
 </section>
-<section class="slide" id="ch3-096" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-096" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>n 维推广 · 边缘分布函数</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">一维边缘</div><p>$$F_{X_1}(x_1)=F(x_1,+\infty,\ldots,+\infty)$$</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">二维边缘</div><p>$$F_{X_1,X_2}(x_1,x_2)=F(x_1,x_2,+\infty,\ldots,+\infty)$$</p>
-</div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>其他边缘分布函数依次类推。</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">二维边缘</div><p>$$F_{X_1,X_2}(x_1,x_2)=F(x_1,x_2,+\infty,\ldots,+\infty)$$</p>
+</div></div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>其他边缘分布函数依次类推。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 91 页</span></footer>
 </section>
-<section class="slide" id="ch3-097" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-097" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>n 维推广 · 边缘概率密度</h2>
 <div class="slide-content "><p>若联合密度为 $f(x_1,\ldots,x_n)$：</p>
-
 <div class="fragment"><p>$$f_{X_1}(x_1)=\int_{\mathbb R^{n-1}}f(x_1,x_2,\ldots,x_n)\,\mathrm dx_2\cdots\mathrm dx_n$$</p>
-</div>
-<div class="fragment"><p>$$f_{X_1,X_2}(x_1,x_2)=\int_{\mathbb R^{n-2}}f(x_1,x_2,x_3,\ldots,x_n)\,\mathrm dx_3\cdots\mathrm dx_n$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>同理可以得到 $k$ 维边缘概率密度，$1\le k&lt;n$。每个被消去的变量都在整个实数范围上积分。</p>
+</div><div class="fragment"><p>$$f_{X_1,X_2}(x_1,x_2)=\int_{\mathbb R^{n-2}}f(x_1,x_2,x_3,\ldots,x_n)\,\mathrm dx_3\cdots\mathrm dx_n$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>同理可以得到 $k$ 维边缘概率密度，$1\le k&lt;n$。每个被消去的变量都在整个实数范围上积分。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 92 页</span></footer>
 </section>
-<section class="slide" id="ch3-098" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-098" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>n 维推广 · 相互独立性</h2>
 <div class="slide-content "><p>若对于所有 $x_1,\ldots,x_n$ 都有</p>
-
 <div class="fragment"><p>$$F(x_1,\ldots,x_n)=F_{X_1}(x_1)F_{X_2}(x_2)\cdots F_{X_n}(x_n)$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>则称 $X_1,\ldots,X_n$ 相互独立。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>则称 $X_1,\ldots,X_n$ 相互独立。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 93 页</span></footer>
 </section>
-<section class="slide" id="ch3-099" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-099" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>两个随机向量的独立性</h2>
 <div class="slide-content "><p>若对所有 $x_1,\ldots,x_m,y_1,\ldots,y_n$ 都有</p>
-
 <div class="fragment"><p>$$F(x_1,\ldots,x_m,y_1,\ldots,y_n)=F_1(x_1,\ldots,x_m)F_2(y_1,\ldots,y_n)$$</p>
-</div>
-<div class="fragment"><p>其中 $F_1,F_2$ 分别是 $(X_1,\ldots,X_m)$ 和 $(Y_1,\ldots,Y_n)$ 的分布函数，$F$ 为它们合在一起的联合分布函数。</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>则称这两个随机向量相互独立。</p>
+</div><div class="fragment"><p>其中 $F_1,F_2$ 分别是 $(X_1,\ldots,X_m)$ 和 $(Y_1,\ldots,Y_n)$ 的分布函数，$F$ 为它们合在一起的联合分布函数。</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>则称这两个随机向量相互独立。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 93（续） 页</span></footer>
 </section>
-<section class="slide" id="ch3-100" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-100" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>独立性的重要结论</h2>
 <div class="slide-content "><p>若随机向量 $(X_1,\ldots,X_m)$ 与 $(Y_1,\ldots,Y_n)$ 相互独立：</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">分量之间独立</div><p>$X_i$ 与 $Y_j$ 相互独立，$i=1,\ldots,m$，$j=1,\ldots,n$。</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">函数之间独立</div><p>若 $h,g$ 是连续函数，则 $h(X_1,\ldots,X_m)$ 与 $g(Y_1,\ldots,Y_n)$ 相互独立。</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">函数之间独立</div><p>若 $h,g$ 是连续函数，则 $h(X_1,\ldots,X_m)$ 与 $g(Y_1,\ldots,Y_n)$ 相互独立。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 94 页</span></footer>
 </section>
-<section class="slide" id="ch3-101" data-type="normal" data-chapter="3" data-source="content/chap03/04-independent-random-variables.md">
+<section class="slide" id="ch3-101" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/04-independent-random-variables.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>第四节小结</h2>
 <div class="slide-content "><div class="component component-card card"><div class="component-label label">离散型</div><p>$$X\perp Y\iff P\{X=x_i,Y=y_j\}=P\{X=x_i\}P\{Y=y_j\}\quad\text{for all }i,j$$</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">连续型</div><p>$$X\perp Y\iff f(x,y)=f_X(x)f_Y(y)\quad\text{a.e.}$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">函数保持独立</div><p>若 $X\perp Y$，则 $h(X)\perp g(Y)$（函数取值为随机变量时）。</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">连续型</div><p>$$X\perp Y\iff f(x,y)=f_X(x)f_Y(y)\quad\text{a.e.}$$</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">函数保持独立</div><p>若 $X\perp Y$，则 $h(X)\perp g(Y)$（函数取值为随机变量时）。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 95 页</span></footer>
 </section>
-<section class="slide" id="ch3-102" data-type="normal" data-chapter="3" data-source="content/chap03/05-summary-and-exercises.md">
+<section class="slide" id="ch3-102" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/05-summary-and-exercises.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>第三章知识结构</h2>
-<div class="slide-content "><div class="knowledge"><div class="knowledge-root">二维随机变量</div><div class="knowledge-items"><div>定义与 n 维推广</div><div>联合分布函数 · 定义与性质</div><div>联合分布律 / 联合概率密度</div><div>边缘分布 · 条件分布</div><div>随机变量的相互独立性</div></div></div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>联合分布 → 边缘分布；联合分布 → 条件分布；边缘分布 + 相应条件分布 → 联合分布。</p>
+<div class="slide-content "><div class="knowledge"><div class="knowledge-root">二维随机变量</div><div class="knowledge-items"><div>定义与 n 维推广</div><div>联合分布函数 · 定义与性质</div><div>联合分布律 / 联合概率密度</div><div>边缘分布 · 条件分布</div><div>随机变量的相互独立性</div></div></div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>联合分布 → 边缘分布；联合分布 → 条件分布；边缘分布 + 相应条件分布 → 联合分布。</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 96 页</span></footer>
 </section>
-<section class="slide" id="ch3-103" data-type="question" data-chapter="3" data-source="content/chap03/05-summary-and-exercises.md">
+<section class="slide" id="ch3-103" data-type="question" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/05-summary-and-exercises.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>练习 · 联合密度与区域概率</h2>
 <div class="slide-content "><p>$$f(x,y)=\begin{cases}k(6-x-y),&amp;0&lt;x&lt;2,\ 2&lt;y&lt;4,\\0,&amp;\text{otherwise}.\end{cases}$$</p>
-
 <div class="fragment"><div class="component component-card card"><div class="component-label label">请先独立思考</div><p>（1）确定常数 $k$；</p><p>（2）求 $P\{X&lt;1,Y&lt;3\}$；</p><p>（3）求 $P\{X&lt;1.5\}$；</p><p>（4）求 $P\{X+Y\le4\}$。</p></div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 97 页</span></footer>
 </section>
-<section class="slide" id="ch3-104" data-type="normal" data-chapter="3" data-source="content/chap03/05-summary-and-exercises.md">
+<section class="slide" id="ch3-104" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/05-summary-and-exercises.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>练习（1）· 确定常数 k</h2>
 <div class="slide-content "><p>$$1=\iint_Df(x,y)\,\mathrm dx\,\mathrm dy,\quad D=\{(x,y):0&lt;x&lt;2,\ 2&lt;y&lt;4\}$$</p>
-
 <div class="fragment"><p>$$\int_2^4 k(6-x-y)\,\mathrm dy=k\left[(6-x)y-\frac{y^2}2\right]_2^4=k(6-2x)$$</p>
-</div>
-<div class="fragment"><p>$$\int_0^2k(6-2x)\,\mathrm dx=k[6x-x^2]_0^2=8k$$</p>
-</div>
-<div class="fragment"><p>$$\boxed{k=\frac18}$$</p>
+</div><div class="fragment"><p>$$\int_0^2k(6-2x)\,\mathrm dx=k[6x-x^2]_0^2=8k$$</p>
+</div><div class="fragment"><p>$$\boxed{k=\frac18}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 98 页</span></footer>
 </section>
-<section class="slide" id="ch3-105" data-type="normal" data-chapter="3" data-source="content/chap03/05-summary-and-exercises.md">
+<section class="slide" id="ch3-105" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/05-summary-and-exercises.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>练习（2）· 两个变量同时受限</h2>
 <div class="slide-content "><p>积分区域须与支持集相交，因此区域为 $0&lt;x&lt;1$、$2&lt;y&lt;3$。</p>
-
 <div class="fragment"><p>$$\begin{aligned}P\{X&lt;1,Y&lt;3\}&amp;=\int_0^1\int_2^3\frac18(6-x-y)\,\mathrm dy\,\mathrm dx\\&amp;=\frac18\int_0^1\left[(6-x)y-\frac{y^2}2\right]_2^3\mathrm dx\\&amp;=\frac18\int_0^1\left(\frac72-x\right)\mathrm dx\\&amp;=\frac18\left[\frac72x-\frac{x^2}2\right]_0^1=\boxed{\frac38}.\end{aligned}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 99 页</span></footer>
 </section>
-<section class="slide" id="ch3-106" data-type="normal" data-chapter="3" data-source="content/chap03/05-summary-and-exercises.md">
+<section class="slide" id="ch3-106" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/05-summary-and-exercises.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>练习（3）· 只限制 X</h2>
 <div class="slide-content "><p>当 $0&lt;x&lt;1.5$ 时，$y$ 仍在整个区间 $(2,4)$ 上积分。</p>
-
 <div class="fragment"><p>$$\begin{aligned}P\{X&lt;1.5\}&amp;=\int_0^{1.5}\int_2^4\frac18(6-x-y)\,\mathrm dy\,\mathrm dx\\&amp;=\frac18\int_0^{1.5}(6-2x)\,\mathrm dx\\&amp;=\frac18[6x-x^2]_0^{1.5}=\frac18(9-2.25)=\boxed{\frac{27}{32}}.\end{aligned}$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 100 页</span></footer>
 </section>
-<section class="slide" id="ch3-107" data-type="normal" data-chapter="3" data-source="content/chap03/05-summary-and-exercises.md">
+<section class="slide" id="ch3-107" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/05-summary-and-exercises.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>练习（4）· 和的概率：确定区域</h2>
 <div class="slide-content "><p>先与支持集相交：</p>
-
 <div class="fragment"><p>$$0&lt;x&lt;2,\quad2&lt;y&lt;4,\quad x+y\le4$$</p>
-</div>
-<div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>对每个 $x\in(0,2)$，积分区间为 $2&lt;y\le4-x$。</p>
-</div></div>
-<div class="fragment"><p>$$P\{X+Y\le4\}=\int_0^2\int_2^{4-x}\frac18(6-x-y)\,\mathrm dy\,\mathrm dx$$</p>
+</div><div class="fragment"><div class="component component-note note"><div class="component-label label">注意</div><p>对每个 $x\in(0,2)$，积分区间为 $2&lt;y\le4-x$。</p>
+</div></div><div class="fragment"><p>$$P\{X+Y\le4\}=\int_0^2\int_2^{4-x}\frac18(6-x-y)\,\mathrm dy\,\mathrm dx$$</p>
 </div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 101 页</span></footer>
 </section>
-<section class="slide" id="ch3-108" data-type="normal" data-chapter="3" data-source="content/chap03/05-summary-and-exercises.md">
+<section class="slide" id="ch3-108" data-type="normal" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/05-summary-and-exercises.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>练习（4）· 完成积分</h2>
 <div class="slide-content "><p>$$\begin{aligned}P\{X+Y\le4\}&amp;=\frac18\int_0^2\left[(6-x)y-\frac{y^2}2\right]_2^{4-x}\mathrm dx\\&amp;=\frac18\int_0^2\left(6-4x+\frac{x^2}2\right)\mathrm dx\\&amp;=\frac18\left[6x-2x^2+\frac{x^3}6\right]_0^2\\&amp;=\frac18\left(12-8+\frac43\right)=\boxed{\frac23}.\end{aligned}$$</p>
 </div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 101（续） 页</span></footer>
 </section>
-<section class="slide" id="ch3-109" data-type="summary" data-chapter="3" data-source="content/chap03/05-summary-and-exercises.md">
+<section class="slide" id="ch3-109" data-type="summary" data-chapter="3" data-kind="chapter" data-deck="chap3" data-source="content/chap03/05-summary-and-exercises.md">
 <div class="chapter-label">概率论与数理统计 · 第3章 · 多维随机变量及其分布</div>
 <h2>练习答案汇总</h2>
 <div class="slide-content grid"><div class="component component-card card"><div class="component-label label">（1）常数</div><p>$$k=\frac18$$</p>
-</div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">（2）联合事件</div><p>$$P\{X&lt;1,Y&lt;3\}=\frac38$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">（3）边缘事件</div><p>$$P\{X&lt;1.5\}=\frac{27}{32}$$</p>
-</div></div>
-<div class="fragment"><div class="component component-card card"><div class="component-label label">（4）和的事件</div><p>$$P\{X+Y\le4\}=\frac23$$</p>
+</div><div class="fragment"><div class="component component-card card"><div class="component-label label">（2）联合事件</div><p>$$P\{X&lt;1,Y&lt;3\}=\frac38$$</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">（3）边缘事件</div><p>$$P\{X&lt;1.5\}=\frac{27}{32}$$</p>
+</div></div><div class="fragment"><div class="component component-card card"><div class="component-label label">（4）和的事件</div><p>$$P\{X+Y\le4\}=\frac23$$</p>
 </div></div></div>
 <footer class="slide-footer"><span>Zida Li · 2026</span><span>原课件 102 页</span></footer>
 </section></div></div>
@@ -1341,7 +1350,7 @@ const RevealOfflineKaTeX = {
 function fitSlideContents() {
   document.querySelectorAll('section.slide.present > .slide-content').forEach(body => {
     body.style.transform = '';
-    if (['1','2','4','5','6','7'].includes(body.parentElement.dataset.chapter)) return;
+    if (body.parentElement.dataset.kind === 'standalone' || ['1','2','4','5','6','7'].includes(body.parentElement.dataset.chapter)) return;
     body.querySelectorAll('.position-block').forEach(block => {
       const inner = block.querySelector('.position-content');
       inner.style.transform = '';
@@ -1358,6 +1367,97 @@ function fitSlideContents() {
 Reveal.on('ready', fitSlideContents);
 Reveal.on('slidechanged', fitSlideContents);
 document.fonts.ready.then(fitSlideContents);
+
+/* Offline CDF explorer for the 1, 2, 2 sampling example. */
+(() => {
+  document.querySelectorAll('[data-cdf-region]').forEach((widget, index) => {
+    const svg = widget.querySelector('svg');
+    const coordinate = widget.querySelector('[data-cdf-coordinate]');
+    const value = widget.querySelector('[data-cdf-value]');
+    const samples = [...widget.querySelectorAll('[data-cdf-sample]')];
+    const toggle = widget.querySelector('[data-cdf-points]');
+    const prefix = `cdf-region-${index}`;
+    const bounds = {left:44, right:530, top:14, bottom:250, min:-0.5, max:3.5};
+    const px = x => bounds.left + (x-bounds.min)/4*(bounds.right-bounds.left);
+    const py = y => bounds.bottom - (y-bounds.min)/4*(bounds.bottom-bounds.top);
+    const rect = (x1,y1,x2,y2,key) => `<rect data-region="${key}" x="${px(x1)}" y="${py(y2)}" width="${px(x2)-px(x1)}" height="${py(y1)-py(y2)}"/>`;
+    const label = (x,y,text) => `<text class="cdf-region-label" x="${px(x)}" y="${py(y)}">${text}</text>`;
+    let x = 1.5, y = 1.5;
+    // These mutually exclusive cases use the right-continuous CDF convention.
+    function evaluate(x,y) {
+      if (x<1 || y<1) return ['outside','0'];
+      if (x<2 && y<2) return ['center','0'];
+      if (x<2) return ['upper','1/3'];
+      if (y<2) return ['right','1/3'];
+      return ['both','1'];
+    }
+    svg.innerHTML = `<defs><marker id="${prefix}-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#647781"/></marker></defs>
+      <g class="cdf-region-areas">
+        <path data-region="outside" d="M${px(-.5)} ${py(3.5)}H${px(1)}V${py(1)}H${px(3.5)}V${py(-.5)}H${px(-.5)}Z"/>
+        ${rect(1,1,2,2,'center')}${rect(1,2,2,3.5,'upper')}${rect(2,1,3.5,2,'right')}${rect(2,2,3.5,3.5,'both')}
+      </g>
+      <g class="cdf-region-boundaries">${[1,2].map(n=>`<path d="M${px(n)} ${bounds.top}V${bounds.bottom} M${bounds.left} ${py(n)}H${bounds.right}"/>`).join('')}</g>
+      <g class="cdf-region-axes" marker-end="url(#${prefix}-arrow)"><path d="M${bounds.left} ${py(0)}H545"/><path d="M${px(0)} ${bounds.bottom}V7"/></g>
+      <g class="cdf-region-ticks">${[1,2,3].map(n=>`<path d="M${px(n)} ${py(0)-3}v6 M${px(0)-3} ${py(n)}h6"/><text x="${px(n)}" y="${py(0)+21}" text-anchor="middle">${n}</text><text x="${px(0)-12}" y="${py(n)+6}" text-anchor="end">${n}</text>`).join('')}<text x="${px(0)-17}" y="${py(0)+21}">O</text><text x="548" y="${py(0)+7}" font-style="italic">x</text><text x="${px(0)-20}" y="17" font-style="italic">y</text></g>
+      <g class="cdf-region-labels">${label(.35,.55,'F = 0')}${label(1.5,1.75,'F = 0')}${label(1.5,2.85,'F = 1/3')}${label(2.8,1.75,'F = 1/3')}${label(2.8,2.85,'F = 1')}</g>
+      <g class="cdf-region-probability" aria-label="三个概率点，每个概率为三分之一">${[[1,2],[2,1],[2,2]].map(([a,b])=>`<circle cx="${px(a)}" cy="${py(b)}" r="5"><title>P(X=${a}, Y=${b}) = 1/3</title></circle>`).join('')}</g>
+      <g class="cdf-region-probe" pointer-events="none"><path/><circle r="6"/></g>`;
+    const regions = [...svg.querySelectorAll('[data-region]')];
+    const probe = svg.querySelector('.cdf-region-probe');
+    function setProbe(nextX,nextY) {
+      // Rounding removes inverse-transform noise at exact boundaries.
+      x = Math.max(bounds.min,Math.min(bounds.max,Math.round(nextX*1e6)/1e6));
+      y = Math.max(bounds.min,Math.min(bounds.max,Math.round(nextY*1e6)/1e6));
+      const [key,result] = evaluate(x,y);
+      widget.dataset.region = key;
+      widget.dataset.value = result;
+      regions.forEach(region=>region.classList.toggle('is-active',region.dataset.region===key));
+      coordinate.textContent = `x = ${x.toFixed(2)}, y = ${y.toFixed(2)}`;
+      value.textContent = `F(x, y) = ${result}`;
+      svg.setAttribute('aria-label',`联合分布函数区域图：${coordinate.textContent}，${value.textContent}。使用方向键探测，Shift 加方向键精细调整。`);
+      probe.querySelector('path').setAttribute('d',`M${px(0)} ${py(y)}H${px(x)}V${py(0)}`);
+      probe.querySelector('circle').setAttribute('cx',px(x));
+      probe.querySelector('circle').setAttribute('cy',py(y));
+      samples.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.cdfSample.split(',').map(Number).every((n,i)=>Math.abs(n-[x,y][i])<1e-6))));
+    }
+    function pointAt(event) {
+      const matrix = svg.getScreenCTM();
+      if (!matrix) return;
+      const point = new DOMPoint(event.clientX,event.clientY).matrixTransform(matrix.inverse());
+      if (point.x<bounds.left || point.x>bounds.right || point.y<bounds.top || point.y>bounds.bottom) return;
+      setProbe(bounds.min+(point.x-bounds.left)/(bounds.right-bounds.left)*4,
+        bounds.min+(bounds.bottom-point.y)/(bounds.bottom-bounds.top)*4);
+    }
+    svg.addEventListener('pointermove',pointAt);
+    svg.addEventListener('pointerdown',event=>{
+      svg.focus({preventScroll:true});
+      svg.setPointerCapture(event.pointerId);
+      pointAt(event);
+      event.preventDefault();
+    });
+    svg.addEventListener('keydown',event=>{
+      const delta = {ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,1],ArrowDown:[0,-1]}[event.key];
+      if (!delta) return;
+      event.preventDefault();event.stopPropagation();
+      const step = event.shiftKey ? .01 : .1;
+      setProbe(x+delta[0]*step,y+delta[1]*step);
+    });
+    samples.forEach(button=>button.addEventListener('click',()=>setProbe(...button.dataset.cdfSample.split(',').map(Number))));
+    toggle.addEventListener('click',()=>{
+      const show = toggle.getAttribute('aria-pressed')!=='true';
+      toggle.setAttribute('aria-pressed',String(show));
+      toggle.textContent = show?'隐藏概率点':'显示概率点';
+      svg.querySelector('.cdf-region-probability').style.display = show?'':'none';
+      widget.querySelector('.cdf-region-point-key').style.visibility = show?'':'hidden';
+    });
+    // Keep exploration gestures inside the widget; Reveal owns the rest of the slide.
+    ['pointerdown','pointermove','pointerup','touchstart','touchmove','touchend','click','dblclick'].forEach(name=>widget.addEventListener(name,event=>event.stopPropagation()));
+    widget.addEventListener('keydown',event=>{
+      if (event.key==='Enter' || event.key===' ' || event.key.startsWith('Arrow')) event.stopPropagation();
+    });
+    setProbe(x,y);
+  });
+})();
 </script>
 </body>
 </html>
