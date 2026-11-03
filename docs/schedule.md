@@ -37,7 +37,7 @@ nav_order: 2
 | :--- | :--- | :--- |
 | 10月21日 | 二维随机变量与边缘分布 <br>  [**课件**{: .label .label-blue }](../assets/docs/Chap3-Lecture.pdf) [**HTML版**{: .label .label-blue }](../assets/lecture_note_HTML/Chap3.html) [**要点**{: .label .label-purple }](../assets/docs/Chap3-Note1.pdf) | **HW 3**{: .label .label-green } 3, 5, 9 <br>**HW 2 due**{: .label .label-red } [**LaTeX模板**{: .label .label-template }](../assets/docs/assignment-2-template.tex) |
 | 10月28日 | 条件分布 <br>  [**要点**{: .label .label-purple }](../assets/docs/Chap3-Note2.pdf) | **HW 3**{: .label .label-green } 13, 15  |
-| 11月4日 | 相互独立、小结与复习 <br> [**练习**{: .label .label-yellow }](../assets/docs/Chap3-Test.pdf)| **HW 3**{: .label .label-green } 17  |
+| 11月4日 | 相互独立、小结与复习 <br> [**复习课件**{: .label .label-blue }](../assets/lecture_note_HTML/Chap3-Review.html) [**练习**{: .label .label-yellow }](../assets/docs/Chap3-Test.pdf)| **HW 3**{: .label .label-green } 17  |
 
 ## 第四章 随机变量的数字特征
 
